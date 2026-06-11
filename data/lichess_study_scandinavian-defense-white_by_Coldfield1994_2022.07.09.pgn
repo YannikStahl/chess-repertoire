@@ -1,0 +1,396 @@
+[Event "Scandinavian Defense (White): Opening Position : Scandinavian Defense"]
+[Date "2022.07.09"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B01"]
+[Opening "Scandinavian Defense"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Opening Position : Scandinavian Defense"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/hwXf1KSu"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[UTCDate "2022.07.09"]
+[UTCTime "16:57:02"]
+
+1. e4 d5!? { : Initial opening position for the Scandinavian Defense.
+The Scandinavian Defense is one of the oldest openings in chess. In it, black immediately tries to contest the center. White's only strong response is to immediately capture the pawn, leading to the Mieses-Kotroc Variation, which highlights the main weakness of the Scandinavian Defense: that black must overextend its queen to recapture the d5 pawn. White can use this overextended queen for tempo development, giving white a stronger initial advantage. Despite being slightly theoretically unsound, the Scandinavian Defense is known for sharp, open positions that can test white players who are underprepared or during quicker time formats. Therefore, it sees some play even at high-level. } 2. exd5! { White's strongest, most common response. This immediately captures the pawn, with white asking black how it wants to recapture the pawn. } (2. e5? { White's 2nd most common response, seen more at low-level. Mistake. This declines to trade pawns in the center, avoiding much of Scandinavian Defense theory. However, this gives up white's initial tempo advantage, often transposing to either an Advanced French (2...e6) or a Caro-Kann structure where black has a tempo up (2...Bf5). }) (2. Nc3?? { White's 3rd most common response, seen more at low-level. Slight blunder. This attempts to continue to add pressure to the d5 pawn, threatening to capture it. However, black can simply advance the pawn with d4, forcing the c3 knight to move, after which the d4 pawn can be defended with e5, creating a strong center for black. }) (2. Nf3?! { Zukertort Opening, Tennison Gambit transposition. Uncommon response. Slight blunder, but can see decent practical results at low-level or quick time formats. This attempts to gambit the e4 pawn in order to trick black into falling for the ICBM trap, but this requires black to greedily accept several sacrifices and will only work against weaker opponents. Black can instead accept the gambit and carefully develop in a way that maintains the single pawn advantage, such as Bf5, avoiding the ICBM trap and maintaining the overall pawn advantage. This line will be covered in a future study by Coldfield1994. }) (2. d4?! { Blackmar-Diemer Gambit. Slight blunder, but can see decent practical results at low-level or quick time formats. This gambits the e4 pawn, intending to to trade the f-pawn for black's advanced pawn after dxe4. This leads to rapid development for white which can be enough for lower-level players to convert into a victory. However, at higher-level this simply loses a pawn and more often leads to draws or losses for white. This line will be covered in a future study by Coldfield1994. }) *
+
+
+[Event "Scandinavian Defense (White): Scandinavian Defense + 2.exd4"]
+[Date "2022.07.09"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Mieses-Kotroc Variation"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Scandinavian Defense + 2.exd4"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/aX7kZMge"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnbqkbnr/ppp1pppp/8/3P4/8/8/PPPP1PPP/RNBQKBNR b KQkq - 0 2"]
+[SetUp "1"]
+[UTCDate "2022.07.09"]
+[UTCTime "18:37:52"]
+
+{ White immediately captures the pawn with exd4, asking black how it wants to recapture the pawn. Black has several candidate responses. }
+2... Qxd5 { Mieses-Kotroc Variation. Black's most common response. This simply recaptures the pawn with the queen, centralizing a powerful piece. This comes at the cost of white being able to gain tempo development with Nc3 as the black queen is overextended and will be forced to move. } (2... Nf6 { Modern Variation. Black's 2nd most common response. Rather than immediately recapture the pawn with the queen and be forced to move it after Nc3, this chooses to add additional pressure by developing the king's side knight. White can't effectively defend this overextended pawn and often simply abandons it in favor of developing more advantageously. This response will be covered in a future study by Coldfield1994. }) (2... c6?! { Blackburne-Kloosterboer Gambit. Inaccuracy, but can see decent practical results at low-level or quick time formats. This gambits a pawn by offering a pawn trade with dxc6, leading to either the Blackburne Gambit with Nxc6 or the even more dubious Kloosterboer Gambit with e5. Both attempt to gambit at least one pawn for rapid development, which can be enough to secure victory for lower-level players. This line will be covered in a future study by Coldfield1994. }) (2... e6?! { Boehnke Gambit. Uncommon response. Mistake, but can see decent practical results at low-level or quick time formats. This attempts to gambit the e6 pawn for rapid development of black's light-squared bishop and an open d-file for black's rook after it castles queen's side. However, this gives up both of black's central pawns and overall loses a pawn, giving white a strong enough advantage to usually secure a victory. This line will be covered in a future study by Coldfield1994. }) *
+
+
+[Event "Scandinavian Defense (White): Scandinavian Defense + 2.exd4 Qxd4 : Mieses-Kotroc Variation"]
+[Date "2022.07.09"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Scandinavian Defense + 2.exd4 Qxd4 : Mieses-Kotroc Variation"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/ZC2OgZLP"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnb1kbnr/ppp1pppp/8/3q4/8/8/PPPP1PPP/RNBQKBNR w KQkq - 0 3"]
+[SetUp "1"]
+[UTCDate "2022.07.09"]
+[UTCTime "19:02:37"]
+
+{ Black simply recaptures the pawn with Qxd5, centralizing but overextending the queen. White has several options to develop. }
+3. Nc3! { White's strongest, most common response. This develops the queen's side knight by immediately attacking black's overextended queen with tempo, forcing it to move. } (3. Nf3!? { White's 2nd most common response. Inaccuracy, but can see decent practical results. This develops the king's side knight, ignoring black's centralized queen in an attempt to more quickly castle king's side and arguing that white can use the threat of Nc3 to essentially develop any minor piece with tempo. However, this allows black to pin the knight to the queen with Bg4, cramping white's development options and winning back some lost advantage from playing the Scandinavian Defense. Despite this, this can be a strong option to throw black players out of theory. This line will be covered in a future study by Coldfield1994. }) (3. d4?! { White's 3rd most common response. Inaccuracy. This immediately regains pawn control of the center, ignoring the queen and arguing that white can tempo attack the black queen with Nc3 at any later time or if the queen moves immediately then gaining control of the center is worth the tempo. However, black can immediately contest the center with e5, threatening to win the d4 pawn or create a drawish position with a pawn trade. }) (3. c4?? { Uncommon response. Slight blunder. This tempo attacks black's overextended queen with the pawn instead of the knight in an attempt to prevent the pawn from being stuck behind the knight. However, black can tactically counterattack white's slightly exposed king with Qe4+. This forks the c2 and g2 pawns, preventing white from defending obstructing the check with either the light-squared bishop or knight without losing a pawn. If white obstructs by offering a queen trade, black can accept and argues that its pawn structure is stronger than white's and at worst will draw the position. }) (3. Qf3?? { Uncommon response. Slight blunder. This immediately counterattacks black's aggressive opening play choice by offering a queen trade. This can be strong against low-level black players who abuse the forward position of their queen. However, black can defend its queen with Nf6, giving black a developmental advantage with a trade and a slightly stronger position without it due to white's slightly more exposed king. }) *
+
+
+[Event "Scandinavian Defense (White): Mieses-Kotroc Variation + 3.Nc3"]
+[Date "2022.07.09"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Main Line"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Mieses-Kotroc Variation + 3.Nc3"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/Zij4NpaA"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnb1kbnr/ppp1pppp/8/3q4/8/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 3"]
+[SetUp "1"]
+[UTCDate "2022.07.09"]
+[UTCTime "19:56:13"]
+
+{ White develops its queen's side knight by immediately attacking black's overextended queen with tempo, forcing it to move. Black has several places to move the queen. }
+3... Qa5! { Main Line. Black's most common, strong response. This moves the queen to an active, yet less overextended square where the queen will eventually pin white's c3 knight to its king when white continues its development by advancing the d2 pawn. } (3... Qd8! { Valencian Variation. Black's 2nd most common, strong response, seen more at low-level. This retreats the queen to its original, secure position, maintaining pressure on the d-file and arguing that white's extra development is negated by its slightly more exposed king and obstructed c2 pawn. While theoretically and practically sound at high-level, this sees slightly worse practical results at low-level compared to Qa5. }) (3... Qd6! { Gubinsky-Melts Defense. Black's 3rd most common, strong response, seen more at high-level. This retreats the queen, maintaining pressure on the d-file while still enabling the queen to exert control over the center of the board. Black argues that white's extra development is negated by its slightly more exposed king and obstructed c2 pawn. This position is slightly more active than Qd8, but less active than Qa5 while also being less secure than Qd8, yet more secure than Qa5. This variation will be covered in a future study by Coldfield1994. }) (3... Qe5+?! { Uncommon response. Inaccuracy. This attempts to recover lost tempo from needing to move the queen by checking the enemy king on a somewhat active, central square. However, white can simply obstruct the check while still continuing to develop with Be2, leaving black's queen again in position to be tempo attacked with Nf3 later. }) (3... Qe6+?! { Uncommon response. Inaccuracy. This attempts to recover lost tempo from needing to move the queen by checking the enemy king on a somewhat active, central square. However, white can simply obstruct the check while still continuing to develop with Be2. While white can't tempo attack the black queen with Nf3 like it could against Qe5+, this obstructs black's e7 pawn, forcing black to either move its queen again or slowly fianchetto its dark-squared bishop, wasting critical tempo. }) *
+
+
+[Event "Scandinavian Defense (White): Mieses-Kotroc Variation + 3.Nc3 Qa5 : Main Line"]
+[Date "2023.04.28"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Mieses-Kotroc Variation + 3.Nc3 Qa5 : Main Line"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/ekWYb8iV"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnb1kbnr/ppp1pppp/8/q7/8/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 4"]
+[SetUp "1"]
+[UTCDate "2023.04.28"]
+[UTCTime "20:07:02"]
+
+{ Black moves its queen to an active, yet less overextended square with Qa5, where the queen will eventually pin white's c3 knight to its king when white continues its development by advancing the d2 pawn. White can continue development in a few ways. }
+4. d4! { White's most common, strong response. This strikes out into the center, grabbing space while opening up the dark-squared bishop. This does self-pin the c3 knight to white's king, but despite this grabbing space in the center is still more valuable. This transposes with Nf3 with best play by both sides. } (4. Nf3! { White's 2nd most common, strong response. This delays grabbing space in the center with a pawn and instead develops the king's side knight, bringing white closer to castling king's side. This transposes with d4 with best play by both sides. }) (4. Bc4?! { White's 3rd most common response. Inaccuracy. This quickly develops the light-squared bishop, adding pressure to the f7 pawn and the potentially contested d5 square, while also bringing white closer to castling king's side. However, this wastes a critical tempo to needed later to pressure black's light-squared bishop after it moves to f5. } 4... Nf6 5. Nf3 Bf5 6. d4 e6 { White would be slightly better off with the f3 knight on e5 instead of the light-squared bishop on c4, as it would be able to play g4 with tempo, pressuring black's light-squared bishop away while also beginning a king's side pawn attack. } { [%csl Rg2,Be5][%cal Rg2g4,Rd1g4,Bf3e5] }) (4. d3? { White's 4th most common response. Mistake. This solidly, yet passively develops the central pawn, opening up the dark-squared bishop. However, this allows black to itself grab space in the center with e5 and self-pins the c3 knight to white's king. } 4... e5) (4. b4!? { Leonhardt Gambit. Slight blunder, but sees very good practical results below 2200. White gambits the b4 pawn in order to quickly develop the a1 rook and potentially trap black's queen. However, with best play, black holds the won pawn and regains near equality lost from playing the Scandinavian Defense. } 4... Qxb4 5. Rb1) *
+
+
+[Event "Scandinavian Defense (White): Main Line + 4.d4"]
+[Date "2023.04.28"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Main Line + 4.d4"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/NDnn6QhW"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnb1kbnr/ppp1pppp/8/q7/3P4/2N5/PPP2PPP/R1BQKBNR b KQkq - 0 4"]
+[SetUp "1"]
+[UTCDate "2023.04.28"]
+[UTCTime "21:52:35"]
+
+{ White strikes out into the center with d4, grabbing space while opening up the dark-squared bishop. This does self-pin the c3 knight to white's king, but despite this, grabbing space in the center is still more valuable. Black has a few different responses. }
+4... c6! { (0.65@48) Black's most common, strong response. This solidly defends the d5 square, preventing white from advancing its d4 pawn easily, while also giving black's queen nice retreating squares on c7 and d8. This obstructs the b8 knight, but with white's pawn on d4, this wasn't a good option for black anyway. This transposes with Nf6 with best play by both sides. } (4... Nf6! { Mieses Variation. Black's 2nd most common, strong response, seen more at high-level. This develops the king's side knight, adding a defender to the d5 square while also bringing black closer to castling king's side. This transposes with c6 with best play by both sides. }) (4... Bf5? { Black's 3rd most common response, seen more at low-level. Mistake. This develops the light-squared bishop, putting pressure on whites c2 pawn, discouraging white from moving its queen away from its defense. However, while vague, this overextends the bishop and gives white tempo to pressure black's queen with Bd2 or add pressure to black's dark-squared bishop with Qf3, gambiting the c2 pawn which cannot be taken due to Qxb7. } 5. Bd2 (5. Qf3)) (4... Nc6?? { Black's 4th most common response, seen more at low-level. Slight blunder. This develops the queen's side knight, putting pressure on the d4 pawn. However, this obstructs the c7 pawn and encourages white to play d5, winning at least two tempo and gaining even more space in the center. } 5. d5 Nb8 { Black loses an additional tempo. } (5... Ne5 6. Bf4 { White develops with tempo. }) (5... Nb4 6. a3 Na6 7. Bb5+ Bd7 8. Bxd7+ Kxd7 { Black loses castling rights, its a6 knight is misplaced, and its king is exposed. })) (4... e5? { Anderssen Counterattack. Uncommon response. Mistake. This counterattack's white's pawn in the center, threatening to trade and weaken white's control of the center. This can see decent results at very low-level due to several simple tactics at black's disposal; however, with good play white can ignore this and simply develop with Nf3, defending the d4 pawn again, pressuring the e5 pawn, and bringing white closer to castling king's side. See Chapter X for further continuations. } 5. Nf3) *
+
+
+[Event "Scandinavian Defense (White): Main Line + 4.d4 c6"]
+[Date "2023.04.28"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Main Line + 4.d4 c6"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/aqLU7yQV"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnb1kbnr/pp2pppp/2p5/q7/3P4/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 5"]
+[SetUp "1"]
+[UTCDate "2023.04.28"]
+[UTCTime "23:04:08"]
+
+{ Black solidly defends the d5 square with c6, preventing white from advancing its d4 pawn easily, while also giving black's queen nice retreating squares on c7 and d8. This obstructs the b8 knight, but with white's pawn on d4, this wasn't a good option for black anyway. White can now continue development in a few ways. }
+5. Nf3?! { White's most common response. Inaccuracy. This develops the king's side knight, defending the d4 pawn again and bringing white closer to castling king's side. However, despite good results at low-level, this sees worse results than Bd2 and Bc4 at high-level, as the f3 knight obstructs several tactics that otherwise would prevent black from playing Bf5 as effectively. See chapter X for continuations. } (5. Bd2!! { (0.9@53) White's strongest, 2nd most common response, seen more at low-level despite best practical results at high-level. This develops white's dark-squared bishop, unpinning white's c3 knight, threatening a discovery attack on black's queen, and bringing white closer to castling queen's side. It does however obstruct the queen's defense of the d4 pawn, but the pawn can easily be defended later with Nf3. This doesn't see as good practical results after Bf5, but this is due to white not often playing the best follow-up response, g4, which gives white a theoretical advantage and great practical results. }) (5. Bc4 { White's 3rd most common response, seen more at high-level. This develops the light-squared bishop, putting pressure on the d5 square, the f7 pawn, and bringing white closer to castling king's side. Potentially white's best practical response at all levels, but is the theoretically worse than Bd2, almost to the point of being an inaccuracy. }) (5. Bd3?! { Uncommon response. Inaccuracy. This develops the light-squared bishop solidly, putting pressure on the f5 square to potentially trade off light-squared bishops while also brining white closer to castling king's side. However, black can still play Bf5, as the bishop trade reduces the machinery that white has to break open black's position, bringing the game closer to equality. It also obstructs the queen's defense of the d4 pawn, but this can easily be defended with Nf3. } 5... Bf5 6. b4 Qxb4 7. Ne2 Bxd3 8. Qxd3 e6 9. Rb1 Qe7 { White has gambited a pawn in exchange for much greater development, but black argues that white doesn't have the machinery to take advantage of its greater development, leaving white with its initial tempo advantage. }) (5. h3? { Uncommon response. Mistake. This defends the g4 square, preventing a Bg4 pin after white later plays Nf3. It also prepares g4, which discourages black from playing Bf5. However, black can ignore this and play Bf5 anyway as white is neglecting to develop its minor pieces, giving black critical tempo to bring the position back towards equality. } 5... Bf5 6. g4 (6. Bd2 e6 7. g4 Bg6 { White and black have near equal development, and white's king's side attack isn't well supported yet, leaving the position drawish. }) 6... Bg6 7. Bg2 e6 { White and black have near equal development, leaving the position drawish. }) *
+
+
+[Event "Scandinavian Defense (White): Main Line + 4.d4 c6, 5.Bd2"]
+[Date "2023.04.30"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Main Line + 4.d4 c6, 5.Bd2"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/Pomhghjv"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnb1kbnr/pp2pppp/2p5/q7/3P4/2N5/PPPB1PPP/R2QKBNR b KQkq - 1 5"]
+[SetUp "1"]
+[UTCDate "2023.04.30"]
+[UTCTime "13:46:37"]
+
+{ White develops its dark-squared bishop with Bd2, unpinning its c3 knight, threatening a discovery attack on black's queen, and bringing white closer to castling queen's side. It does, however, obstruct the queen's defense of the d4 pawn, but the pawn can easily be defended later with Nf3. Black has several possible responses. }
+5... Qc7?! { Black's most common response. Inaccuracy. This prophylactically retreats the queen, removing the possibility of a discovered attack on black's queen. However, this is strictly less active than Qb6 as the queen doesn't put any real pressure on white's position, allowing it to develop uncontested. } (5... Qb6! { (0.77@53) Black's 2nd most common, strong response, seen more at low-level. This prophylactically retreats the queen, removing the possibility of a discovered attack, while also forking the b2 and d4 pawns. White can gambit both of these pawns for faster development, so isn't actually concerned with defending the pawns. Therefore, black sees better results at low-level compared to high-level where white is unable to use the won developmental tempo effectively, simply remaining down a pawn. Yet despite this, black can also delay capturing the pawns if they are left unprotected and instead also develop, as the threat can be stronger than its execution. }) (5... Nf6! { (0.79@53) Black's 3rd most common, strong response. This simply develops the king's side knight, putting pressure on the white squares in the center and king's side, particularly d5 and g4, while also bringing black closer to castling king's side. }) (5... Bf5!? { Black's 4th most common response, seen more at high-level. Mistake, but sees good practical results at all levels because its refutation is rarely played. This develops black's dark-squared bishop, putting pressure on the c2 pawn, discouraging white from moving its queen away. However, white can counterattack the light-squared bishop with g4, which helps develop a king's side pawn attack with tempo. See Chapter X for continuations. }) (5... Qd8 { Valencian Variation transposition. Uncommon response. }) *
+
+
+[Event "Scandinavian Defense (White): Main Line + 4.d4 c6, 5.Bd2 Bf5??"]
+[Date "2023.04.30"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Main Line + 4.d4 c6, 5.Bd2 Bf5??"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/F4eTCYdo"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rn2kbnr/pp2pppp/2p5/q4b2/3P4/2N5/PPPB1PPP/R2QKBNR w KQkq - 2 6"]
+[SetUp "1"]
+[UTCDate "2023.04.30"]
+[UTCTime "15:45:01"]
+
+{ Black develops its dark-squared bishop with Bf5, putting pressure on the c2 pawn and discouraging white from moving its queen away. However, white can counterattack the light-squared bishop with g4, which helps develop a king's side pawn attack with tempo. Black has a few ways to move the light-squared bishop. }
+6. g4 Be6 (6... Bg6 7. Nge2) (6... Bd7 { Black's bishop isn't placed any more effectively than it was on c8, and now white has the beginnings of a king's side pawn attack. }) 7. f4 g6 8. Bd3 Na6 *
+
+
+[Event "Scandinavian Defense (White): Main Line + 4.d4 c6, 5.Nf3?!"]
+[Date "2023.04.30"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Main Line + 4.d4 c6, 5.Nf3?!"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/xdLYLa6H"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnb1kbnr/pp2pppp/2p5/q7/3P4/2N2N2/PPP2PPP/R1BQKB1R b KQkq - 1 5"]
+[SetUp "1"]
+[UTCDate "2023.04.30"]
+[UTCTime "12:37:59"]
+
+{ White develops the king's side knight, defending the d4 pawn again and bringing white closer to castling king's side. However, despite good results at low-level, this sees worse results than Bd2 and Bc4 at high-level, as the f3 knight obstructs several tactics that otherwise would prevent black from playing Bf5 as effectively. }
+5... Bf5 (5... Nf6 6. Bd2 (6. h3 Bf5 7. Bd3 (7. g4 Bg6 { Black is able to maintain its bishop on the b1-h7 diagonal since white's f2 pawn is obstructed by the f3 knight. Without the knight placed on f3, black would have been forced to move the bishop off of the diagonal with Be6, retreat the bishop poorly with Bg6, f4, h6, f5 and Bh7, or lock its dark-squared bishop on e7 and prevent easy castling after Bg6, f4, e6, Qe2, and Be7. }) 7... Bxd3 8. Qxd3 { Black argues that white doesn't have the machinery needed to break open its position, leading to a drawn position practically and theoretically. }) 6... Bf5 7. Bc4 (7. Ne4 Qd5 8. Nxf6+ exf6 { Black has similar development to white and can hide its king after castling king's side similarly in function to the main line of the Berlin Defense, creating a drawable or even winnable position practically. Theoretically white still has its initial advantage, however. }) (7. h3 Nbd7 8. g4 Bg6 { Black is able to maintain its bishop on the b1-h7 diagonal since white's f2 pawn is obstructed by the f3 knight. Without the knight placed on f3, black would have been forced to move the bishop off of the diagonal with Be6, retreat the bishop poorly with Bg6, f4, h6, f5 and Bh7, or lock its dark-squared bishop on e7 and prevent easy castling after Bg6, f4, e6, Qe2, and Be7. See later chapters following Bd2 for move order examples. } { [%csl Rf3][%cal Rf2f4] }) 7... e6 (7... Nbd7 8. Qe2 Qc7 9. O-O-O b5 10. Nh4 Bg6 11. Bb3 { Black argues that is has a good defense and an initial queen's side attack in exchange for slightly less development and and uncastled, yet safe, king. This is a slightly better position than it was in after c6, but white still holds its initial advantage. If white wins the bishop pair with Nxg6, black's h8 rook is opened up in exchange. }) 8. Ne4 Qd8 9. Ng3 Bg4 { White has more development and still maintains some advantage, theoretically and practically, but black argues that it has a relatively better positional defense than it had after c6. }) 6. Bc4 (6. Bd2 Nf6 7. Bc4 { Transposition with above. }) (6. Nh4 Nf6 7. Nxf5 Qxf5 { Black sacrifices the bishop pair in exchange for more development, but argues that white doesn't have the machinery to break down black's position. Despite this, white theoretically and practically maintains its initial advantage, though this is still better for black positionally than after c6. }) (6. g4 Bxg4 { White can't pressure away the light-squared bishop with g4, as the knight obstructs defense of the pawn. } { [%csl Rf3][%cal Rd1g4] }) (6. h3 Nf6 7. Nh4 (7. g4 Bg6 { Black is able to maintain its bishop on the b1-h7 diagonal since white's f2 pawn is obstructed by the f3 knight. Without the knight placed on f3, black would have been forced to move the bishop off of the diagonal with Be6, retreat the bishop poorly with Bg6, f4, h6, f5 and Bh7, or lock its dark-squared bishop on e7 and prevent easy castling after Bg6, f4, e6, Qe2, and Be7. See later chapters following Bd2 for move order examples. } { [%csl Rf3][%cal Rf2f4] }) 7... Bg6 8. Nxg6 hxg6 { White has won the bishop pair, but has opened up black's a1 rook and is behind in development, leaving an equal position. }) 6... Nf6 7. Bd2 Nbd7 8. Qe2 Qc7 9. O-O-O e6 { Black argues that is has a good defense in exchange for slightly less development and and uncastled, yet safe, king. This is a slightly better position than it was in after c6, but white still holds an advantage. } *
+
+
+[Event "Scandinavian Defense (White): Main Line + 4.d4 Nf6 : Mieses Variation"]
+[Date "2023.04.28"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Main Line + 4.d4 Nf6 : Mieses Variation"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/QJyfsB9W"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnb1kb1r/ppp1pppp/5n2/q7/3P4/2N5/PPP2PPP/R1BQKBNR w KQkq - 1 5"]
+[SetUp "1"]
+[UTCDate "2023.04.28"]
+[UTCTime "23:07:40"]
+
+{ Black develops its king's side knight with Nf6, adding a defender to the d5 square while also bringing black closer to castling king's side. White can now continue development in a few ways. }
+5. Nf3 (5. Bd2) (5. Bc4) (5. Bd3) (5. h3) *
+
+
+[Event "Scandinavian Defense (White): Main Line + 4.d4 e5?? : Anderssen Counterattack"]
+[Date "2023.04.28"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Anderssen Counterattack, Collijn Variation"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Main Line + 4.d4 e5?? : Anderssen Counterattack"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/iJw8Rhlh"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnb1kbnr/ppp2ppp/8/q3p3/3P4/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 5"]
+[SetUp "1"]
+[UTCDate "2023.04.28"]
+[UTCTime "23:01:57"]
+
+{ Black counterattack's white's pawn in the center with e5, threatening to trade and weaken white's control of the center. This can see decent results at very low-level due to several simple tactics at black's disposal; however, with good play white can ignore this and simply develop with Nf3. }
+5. Nf3!! { (1.40@50) Goteborg System. White's strongest, 2nd most common response. This defends the d4 pawn again, pressures the e5 pawn, and brings white closer to castling king's side. Black has several tactical options it can attempt in order to gain an advantage, but is otherwise positionally down at least one pawn. } (5. dxe5? { White's 2nd most common response. Mistake. This attempts to begin a pawn trade on white's terms, opening up the center. However, black can intermezzo with Bb4, double attacking white's c3 knight and functionally forcing white to obstruct its own queen with Bd2, continuously develop while defending the c3 knight with the queen, or else give up severe damage to its pawn structure after Bxc3 and bxc3. } 5... Bb4 6. Bd2 (6. Nf3 Bxc3+ 7. bxc3 { Destroyed queen's side pawn structure. }) 6... Qxe5+ { Obstructed queen and tempo attack on white's king. }) (5. d5) (5. Qe2) 5... Bg4 { Collijin Variation. } (5... exd4) (5... e4) (5... Bb4) *
+
+
+[Event "Scandinavian Defense (White): Mieses-Kotroc Variation + 3.Nc3 Qd8 : Valencian Variation"]
+[Date "2022.07.09"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Mieses-Kotroc Variation + 3.Nc3 Qd8 : Valencian Variation"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/kB690fMA"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnbqkbnr/ppp1pppp/8/8/8/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 4"]
+[SetUp "1"]
+[UTCDate "2022.07.09"]
+[UTCTime "23:06:16"]
+
+{ Black retreats its queen to its original, secure position with Qd8, maintaining pressure on the d-file and arguing that white's extra development is negated by its slightly more exposed king. White has several possible responses. }
+4. d4! { White's most common, strong response. This establishes a pawn in the board center, controlling it and opening up both the queen and dark-squared bishop. } (4. Nf3!? { White's 2nd most common, strong response, seen more at low-level. This develops the king's side knight, preparing white to castle king's side. Despite its theoretical strength, this response doesn't see much play at high-level, likely due to the practical difficulty of playing this position after the f3 knight is pinned to the queen by black with Bg4. }) (4. Bc4? { White's 3rd most common response, seen more at low-level. Mistake. This develops the light-squared bishop in preparation to castle king's side. However, this gives black time to gain control of the d4 square with c5, preventing white from immediately playing d4 and allowing black to later develop its queen's side knight without obstructing its c-pawn. }) (4. g3? { Uncommon response. Mistake. This prepares to fianchetto the light-squared bishop which will put pressure on the major a8-h1 diagonal and bring white closer to castling king's side. However, this allows black to play c5, gaining control of the d4 square and preventing white from playing d4, hindering its developmental potential and leading to a more drawish game. }) (4. h3? { Uncommon response. Mistake. This defends the g4 square, preventing black from pinning white's knight to its queen after Nc3 with Bg4. However, this doesn't control the center or develop a minor piece, essentially giving up the initial tempo/developmental advantage that white had, creating an equal position. }) (4. d3? { Uncommon response. Mistake. This solidly, yet passively controls some of the center and opens up white's dark-squared bishop. However, this doesn't control as much of the center as d4 or develop a minor piece, essentially giving up the initial tempo/developmental advantage that white had, creating an equal position. }) *
+
+
+[Event "Scandinavian Defense (White): Valencian Variation + 4.d4"]
+[Date "2022.07.10"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Valencian Variation + 4.d4"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/aMiVfvH4"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnbqkbnr/ppp1pppp/8/8/3P4/2N5/PPP2PPP/R1BQKBNR b KQkq - 0 4"]
+[SetUp "1"]
+[UTCDate "2022.07.10"]
+[UTCTime "00:31:21"]
+
+{ White establishes a pawn in the board center with d4, controlling the center and opening up both its queen and dark-squared bishop. }
+4... Nf6! { Black's most common, strong response. This develops the king's side knight, defending some key central squares and the g4 square, possibly enabling Ng4 or Bg4 tactics if white plays poorly. It also prepares to castle king's side. } (4... c6?! { Black's 2nd most common response, seen more at low-level. Inaccuracy. This solidly defends the d5 square, preventing white from ever effectively advancing its pawn with d5. It also defends the king from any bishop attacks with Bb5+. However, this obstructs the normal development of black's queen's side knight, forcing it to develop with Nd7 or Na6, prevents black from ever effectively castling queen's side, and continues to neglect developing any minor pieces, giving white an even larger developmental advantage. }) (4... e6!? { Black's 3rd most common, strong response. Theoretically sound, but rarely sees play at high-level and practically sees worse results at all levels, possibly due to difficulties recovering from a developmental disadvantage. This defends the d5 square, preventing white from advancing its d-pawn without a pawn trade. This also opens up black's queen and dark-squared bishop, bringing black closer to castling king's side. }) (4... Bf5?! { Uncommon response. Inaccuracy. This develops the light-squared bishop, targeting the c2 pawn and preventing white from easily moving its queen, which defends the pawn. However, white can either commit to castling queen's side by first tempo attacking the light-squared bishop with g4 or even trade away the pawn by forking the light-squared bishop and b7 pawn with Qf3, forcing the light-squared bishop to retreat or massively blunder with Bxc2. }) (4... g6! { Uncommon, strong response. This prepares to fianchetto the dark-squared bishop, which will put additional pressure on the d4 pawn and the rest of the major a1-h8 diagonal in addition to bringing black closer to castling king's side. }) (4... Nc6?? { Uncommon response. Slight blunder. This develops the queen's side knight, attempting to put pressure on the d4 pawn. However, this allows white to tempo attack the c6 knight with d5, moving the pawn to a more easily defended space and forcing the c6 knight to move away. }) *
+
+
+[Event "Scandinavian Defense (White): Valencian Variation + 4.d4 Nf6"]
+[Date "2022.07.10"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Valencian Variation + 4.d4 Nf6"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/NMYlYqsh"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnbqkb1r/ppp1pppp/5n2/8/3P4/2N5/PPP2PPP/R1BQKBNR w KQkq - 1 5"]
+[SetUp "1"]
+[UTCDate "2022.07.10"]
+[UTCTime "02:31:03"]
+
+{ Black develops its king's side knight, defending some key central squares and the g4 square, possibly enabling Ng4 or Bg4 tactics if white plays poorly. It also prepares black to castle king's side. White has several possible responses. }
+5. Nf3! { White's strongest, most common response. This simply develops the king's side knight, defending the d4 pawn and preparing white to castle king's side. White argues that any Bg4 pin of the f3 knight onto the queen is ineffective with black's best option to lose the bishop pair by trading its light-squared bishop for the knight. } (5. Bc4?! { White's 2nd most common response. Inaccuracy. This aggressively develops the light-squared bishop, putting pressure on the f7 pawn and preparing white to castle king's side. However, this slightly overextends the light-squared bishop, allowing black to pressure it with a6 and b5 for tempo development of a queen's side pawn attack. }) (5. Bg5?! { Uncommon response. Inaccuracy. This attempts to pin the f6 knight to its e7 pawn and queen, discouraging black from advancing its e-pawn. However, black can simply push away the bishop to f4 with h6, making the response strictly worse than Bf4 initially. }) (5. h3? { Uncommon response. Mistake. This defends the g4 square, preventing any Ng4 attacks or Bg4 pins after white plays Nf3. However, white doesn't need to preemptively stop Bg4 and should instead simply react to it with h3 afterwards. By doing so now, this wastes critical tempo that black can use to fortify its position with c6 or e6. }) (5. Bf4!? { Uncommon response. This develops the dark-squared bishop to the only active square where it doesn't obstruct the queen (d2) or be easily attacked (e3 and g5). This helps prepare white to castle queen's side while also pressuring black's queen's side. This response doesn't see great practical results at all levels, but this is more due to white players choosing not to follow the most optimal developmental patterns rather than the lines being difficult for white. Because of this, Bf4 may be a good sideline for further study, but it is still slightly theoretically inferior to Nf3 overall. }) (5. Be3?! { Uncommon response. Inaccuracy. This develops the dark-squared bishop, adding another defender to the d4 pawn and preparing white to castle queen's side. However, this response requires difficult/obtuse positional maneuvers like Qf3 in order to maintain only a slight theoretical advantage for white that is still worse for white compared to Nf3 (and slightly worse than Bf4). The line may be worth studying due to its complexity, but it seems one could better spend their time following the Nf3 mainline (or Bf4). }) *
+
+
+[Event "Scandinavian Defense (White): Valencian Variation + 4.d4 Nf6, 5.Nf3"]
+[Date "2022.07.10"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Valencian Variation, Main Line"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Valencian Variation + 4.d4 Nf6, 5.Nf3"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/K1C0Gkg4"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnbqkb1r/ppp1pppp/5n2/8/3P4/2N2N2/PPP2PPP/R1BQKB1R b KQkq - 2 5"]
+[SetUp "1"]
+[UTCDate "2022.07.10"]
+[UTCTime "03:41:29"]
+
+{ White simply develops its king's side knight with Nf3, defending the d4 pawn and preparing white to castle king's side. }
+5... Bg4!? { Black's most common response. Inaccuracy, but sees good practical results at all levels as at least a drawing technique, likely due to the difficulty for white to break black's solid position. This pins the f3 knight to the queen, discouraging white from moving the knight. However, white can simply push away the bishop or force it to trade (losing the bishop pair) with h3. Black can't easily retreat with Bh5 without giving up a lot of positional advantage or the bishop pair after g4 and Ne5. Despite this, trading away black's light-squared bishop for white's f3 knight with Bxf3 is very drawish and therefore can be seen as a good result for black. } (5... e6!? { Black's strongest, 2nd most common response, seen more at low-level. This defends the d5 square, preventing white from effectively playing d5. This also opens up the dark-squared bishop, bringing black closer to castling king's side. Despite its theoretical strength, this response sees poor practical results at all levels, likely due to the difficulty of play after a Bg5 pin of black's f6 knight on the queen or Bc4. }) (5... c6! { Ilundain Variation. Black's 3rd most common, strong response. This solidly defends the d5 square, preventing white from ever effectively advancing its pawn with d5. It also defends the king from any bishop attacks with Bb5+. This all comes at a slight cost of preventing black from ever effectively castling queen's side. }) (5... Bf5?! { Uncommon response. Inaccuracy. This develops the light-squared bishop, targeting the c2 pawn and preventing white from easily moving its queen, which defends the pawn. However, this doesn't have any immediate threats, allows white to centralize its knight with Ne5, and can be tempo attacked with g4 (after Ne5) to begin a king's side pawn attack or fianchetto the light-squared bishop. }) (5... g6! { Uncommon, strong response, seen slightly more at high-level. This prepares to fianchetto the dark-squared bishop, putting pressure on the d4 pawn, c3 knight, and the rest of the major a1-h8 diagonal, while also bringing black closer to castling king's side. }) (5... Nc6?! { Uncommon response. Inaccuracy. This develops black's queen's side knight, putting additional pressure on the d4 pawn. However, this allows white to pin the c6 knight to the king with Bf5, trading the bishop for the knight and damaging black's pawn structure after a6, as white's developmental advantage, black's loss of tempo from playing a6, and black's damaged pawn structure makes up for losing the bishop pair. }) (5... a6! { Uncommon, strong response. This simply defends the b5 square from any knight attacks with Nb5 or bishop checks or pins with Bb5. This is essentially a waiting move, preparing to develop in response to white. }) *
+
+
+[Event "Scandinavian Defense (White): Valencian Variation + 4.d4 Nf6, 5.Nf3 Bf4?! : Valencian Main Line"]
+[Date "2022.07.10"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Valencian Variation + 4.d4 Nf6, 5.Nf3 Bf4?! : Valencian Main Line"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/dyF5J5mU"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rn1qkb1r/ppp1pppp/5n2/8/3P2b1/2N2N2/PPP2PPP/R1BQKB1R w KQkq - 3 6"]
+[SetUp "1"]
+[UTCDate "2022.07.10"]
+[UTCTime "05:03:39"]
+
+{ Black pins white's f3 knight to its queen, discouraging white from moving the knight. This line is theoretically dubious, but it is the most common response and practically sees good results at all levels as at least a drawing technique for black. White has a few responses. }
+6. Be2? { White's most common response, seen more at low-level. Mistake. This interferes with black's pin on the f3 knight, allowing white to move either its queen or knight. This also brings white closer to castling king's side. However, this waste a critical tempo, allowing black to more easily develop and defend its position with either c6 or e6 instead of forcing the Bxf3 trade immediately after h3. } (6. h3! { White's strongest, 2nd most common response, seen more at high-level. This immediately pressures black's light-squared bishop, forcing it to retreat or trade for the f3 knight, losing the bishop pair. }) (6. Bc4? { Uncommon response. Mistake. This develops the light-squared bishop, putting pressure on the f7 pawn and bringing white closer to castling king's side. However, this waste a critical tempo, allowing black to more easily develop and defend its position with e6 instead of forcing the Bxf3 trade immediately after h3. }) (6. Be3?! { Uncommon response. Inaccuracy. This defends the d4 pawn, bringing white closer to castling queen's side. However, this waste a critical tempo, allowing black to more easily develop and defend its position with e6 instead of forcing the Bxf3 trade immediately after h3. }) (6. Bf4?! { Uncommon response. Inaccuracy. This develops the dark-squared bishop to the only active square where it doesn't obstruct the queen (d2) or be easily attacked (e3 and g5). This helps prepare white to castle queen's side while also pressuring black's queen's side. However, this waste a critical tempo, allowing black to more easily develop and defend its position with e6 instead of forcing the Bxf3 trade immediately after h3. }) *
+
+
+[Event "Scandinavian Defense (White): Valencian Main Line + 6.h3"]
+[Date "2022.07.10"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Valencian Main Line + 6.h3"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/WFqsdxP8"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rn1qkb1r/ppp1pppp/5n2/8/3P2b1/2N2N1P/PPP2PP1/R1BQKB1R b KQkq - 0 6"]
+[SetUp "1"]
+[UTCDate "2022.07.10"]
+[UTCTime "05:26:24"]
+
+{ White immediately pressures black's light-squared bishop, forcing it to retreat or trade for the f3 knight, losing the bishop pair. Black essentially has a few forced responses since the light-squared bishop is pressured. }
+6... Bxf3! { Black's strongest, most common response. This trades the light-squared bishop for white's f3 knight. Black argues that sacrificing the bishop pair is worth winning back some developmental equality and a tempo from white playing a3, as white doesn't have the material and/or positional strength to break black's defenses, leading to more drawn positions at higher levels. } (6... Bh5?? { Black's 2nd most common response. Slight blunder. This retreats the light-squared bishop, maintaining the pin on the f3 knight. However, white can interfere with the pin with g4, tempo attacking the light-squared bishop and forcing it to g6, which white can pressure with Ne5. This essentially still loses the bishop pair, but allows white to develop a king's side pawn attack with tempo, possibly fianchetto its light-squared bishop with tempo, and centralize its knight with the threat of winning the bishop pair, the threat of which can be used to force black to develop inefficiently. }) (6... Bf5?? { Uncommon response. Slight blunder. This retreats the light-squared bishop, putting pressure on the c2 pawn. This prevents white's queen from easily moving away from defense of it. However, white can continue its king's side pawn attack by tempo attacking the light-squared bishop with g4, forcing it to again retreat. }) 7. Qxf3! { White's strongest, most common response. This simply recaptures black's light-squared bishop and puts pressure on the b7 pawn. This appears to hang the d4 pawn, but black can't capture it due to Qxb7 which wins both a pawn and the rook. } (7. gxf3?? { Uncommon response, seen only at low-level. Slight blunder. This attempts to maintain defense of the d4 pawn by capturing with the g-pawn, opening up the g-file for white's rook. However, this damages white's pawn structure, prevents white from castling king's side, and the d4 pawn could have been tactically defended with Qxf3, anyway. }) 7... c6! { Black's strongest, most common response. This defends the b7 pawn by obstructing white's queen, defends the b5 square and obstructs any Nb5 knight attacks or Bb5 pins/checks, and defends the d5 square, preventing white from ever effectively advancing its d-pawn. } (7... Nc6?? { Uncommon response. Blunder. This attempts to develop black's queen's side knight to obstruct the white queen's pressure on the b7 pawn. However, white can simply pin the black knight to its king with Bb5. Black can't prevent white from capturing the knight. If black recaptures with the pawn, white can fork the king and rook with Qxc6, and if black tries to defend the knight with the queen with Qd7, white can attack the knight with d5. }) *
+
+
+[Event "Scandinavian Defense (White): Valencian Main Line + 6.h3 Bxf3, 7.Qxf3 c6"]
+[Date "2022.07.10"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Valencian Main Line + 6.h3 Bxf3, 7.Qxf3 c6"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/j52qO2NC"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rn1qkb1r/pp2pppp/2p2n2/8/3P4/2N2Q1P/PPP2PP1/R1B1KB1R w KQkq - 0 8"]
+[SetUp "1"]
+[UTCDate "2022.07.10"]
+[UTCTime "06:00:07"]
+
+{ Black trades its light-squared bishop for white's f3 knight, causing white to recapture with the queen, forcing black to obstruct the queen's pressure on the b7 pawn with c7. White now has several options. }
+8. Be3! { White's most common, strong response. This simply develops the dark-squared bishop, defending the d4 pawn and bringing white closer to castling queen's side. } (8. Bf4!? { White's 2nd most common response. Inaccuracy with best play, but sets a non-obvious trap. Firstly, this develops the dark-squared bishop, putting pressure on the b8 knight and defending the c7 square, bringing white closer to possibly castling queen's side. More importantly, this sets a trap for black by tactically sacrificing the d4 pawn. Black can't recapture without allowing white to fork the queen and c7 square with Nb5. If black captures the b2 pawn in response, threatening to win the a1 rook, white can still play Nc7+, forking the black king and rook, as black is forced to play Kd8 which let's white intermezzo with Rd1+, saving the rook. However, black can simply avoid capturing the pawn and play e6 instead, preventing black from being forced to play Kd8 and therefore avoiding the trap line. }) (8. Bg5?? { White's 3rd most common response, seen more at low-level. Slight blunder. This attempts to put pressure on the f6 knight, discouraging black from moving its e7 pawn and bringing white closer to castling king's side. However, this simply hangs the d4 pawn without any tempo compensation from Be3, as white has already moved the bishop once, while also preventing white from easily castling queen's side. }) (8. g4!? { White's uncommon, strong response. This aggressively advances one of king's side pawns, enabling white to fianchetto its light-squared bishop, threatening to attack black's f6 knight with g5, and bringing white's pawns closer to a king's side pawn attack. This comes at the cost of gambiting the d4 pawn for tempo development and weakening the effectiveness of castling king's side, especially considering how castling queen's side may be difficult after Qxd4. Despite its theoretical and practical strength, this response is not seen much at all levels as white players often prefer to avoid gambiting the d4 pawn, instead defending with Be3, which is equivalently strong. This may be a good line to further study at high-level to avoid theory. }) (8. Qd3!? { Uncommon response, seen more at high-level, likely due to attempts to avoid main line drawish positions. Inaccuracy, but sees good practical results at all levels. This repositions the queen, defending the d4 pawn, forming a battery on the a6-f1 diagonal, and preparing white to later play d5 to break open black's position. However, this moves the queen a second time, giving up some of the developmental advantage that white had. }) (8. Bc4?? { Uncommon response, seen more at low-level. Slight blunder. This attempts to develop the light-squared bishop, threatening the f7 pawn and preventing black from moving its f6 knight easily. However, this simply hangs the d4 pawn to Qxd4, which tempo attacks the bishop and forces it to move again. }) *
+
+
+[Event "Scandinavian Defense (White): Valencian Main Line + 6.h3 Bxf3, 7.Qxf3 c6, 8.Be3"]
+[Date "2022.07.10"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Valencian Main Line + 6.h3 Bxf3, 7.Qxf3 c6, 8.Be3"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/Lmm30xH0"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rn1qkb1r/pp2pppp/2p2n2/8/3P4/2N1BQ1P/PPP2PP1/R3KB1R b KQkq - 1 8"]
+[SetUp "1"]
+[UTCDate "2022.07.10"]
+[UTCTime "18:16:42"]
+
+{ White simply develops the dark-squared bishop with Be3, defending the d4 pawn and bringing white closer to castling queen's side. }
+8... e6! { Black's strongest, most common response. This opens up the dark-squared bishop, bringing black closer to castling king's side. It also defends the d5 pawn again, further discouraging white from ever playing d5. This comes at the cost of potentially enabling a Bg5 pin on the f6 knight later in the game, though this can be mitigated by Be7 in response. } (8... Nbd7?! { Uncommon response. Inaccuracy. This develops the queen's side knight, defending the other f6 knight and preparing to reroute it to b6. However, this is slow and allows white tempo to continue its development by castling queen's side. }) (8... Nd5?! { Uncommon response. Inaccuracy. This centralizes black's knight, putting pressure on the e3 bishop and threatening to win the bishop pair or trade knights. However, white can simply move the bishop now that the d5 knight obstructs the black queen's pressure on the d4 pawn. }) (8... g6? { Uncommon response. Mistake. This prepares to fianchetto black's dark-squared bishop, bringing black closer to castling king's side. However, this is very slow and gives white time to castle queen's side and organize its structure, giving a large positional advantage as black's king's side now has pawn hooks for a pawn attack. }) *
+
+
+[Event "Scandinavian Defense (White): Valencian Main Line + 6.h3 Bxf3, 7.Qxf3 c6, 8.Be3 e6"]
+[Date "2022.07.10"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Scandinavian Defense (White)"]
+[ChapterName "Valencian Main Line + 6.h3 Bxf3, 7.Qxf3 c6, 8.Be3 e6"]
+[ChapterURL "https://lichess.org/study/hkQcZYCs/nIkCTBhq"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rn1qkb1r/pp3ppp/2p1pn2/8/3P4/2N1BQ1P/PPP2PP1/R3KB1R w KQkq - 0 9"]
+[SetUp "1"]
+[UTCDate "2022.07.10"]
+[UTCTime "18:43:01"]
+
+9. O-O-O (9. Bd3) (9. Bc4) (9. a3) (9. g4) *
+
+

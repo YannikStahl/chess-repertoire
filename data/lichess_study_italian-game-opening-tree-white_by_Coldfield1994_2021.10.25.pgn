@@ -1,0 +1,92 @@
+[Event "Italian Game, Opening Tree (White): Opening Position"]
+[Date "2021.10.25"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C50"]
+[Opening "Italian Game: Giuoco Piano"]
+[StudyName "Italian Game, Opening Tree (White)"]
+[ChapterName "Opening Position"]
+[ChapterURL "https://lichess.org/study/ok0Qe3CX/62sND5PO"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[UTCDate "2021.10.25"]
+[UTCTime "21:07:45"]
+
+{ This study is an opening tree of the first few moves of the Italian Game from white's perspective. See other studies authored by Coldfield1994 for more detailed analysis of specific responses to the Italian Game. } { [%cal Ge2e4] }
+1. e4 $10 { [%csl Ge4][%cal Ge7e5] } 1... e5 $10 { [%csl Ge5][%cal Gg1f3] } 2. Nf3 $10 { [%csl Gf3][%cal Gb8c6] } 2... Nc6 $10 { [%csl Gc6][%cal Gf1c4] } 3. Bc4 $10 { At this point, 3.Bc4, the initial position for the Italian Game has been reached. } { [%csl Gc4,Gc6,Ge5,Ge4,Gf3] } 3... Bc5 $10 { Giuoco Piano. Most common response. } (3... Nf6 $10 { Two Knights Defense. 2nd most common response. }) (3... Be7 $14 { Hungarian Defense. 3rd most common response. }) (3... d6 $10 { Uncommon response. }) (3... g6 $14 { Uncommon response. }) (3... h6 $14 { Anti-Fried Liver Defense. Uncommon response. }) (3... f5 $14 { Rousseau Gambit. Uncommon response. }) *
+
+
+[Event "Italian Game, Opening Tree (White): 3.Bc5 - Giuoco Piano"]
+[Date "2021.10.25"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C53"]
+[Opening "Italian Game: Classical Variation"]
+[StudyName "Italian Game, Opening Tree (White)"]
+[ChapterName "3.Bc5 - Giuoco Piano"]
+[ChapterURL "https://lichess.org/study/ok0Qe3CX/Zvks10nV"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3"]
+[SetUp "1"]
+[UTCDate "2021.10.25"]
+[UTCTime "22:08:45"]
+
+{ 3.Bc5, the Giuoco Piano, is one of black's two main responses to the Italian Game, the other being the Two Knights Defense. }
+3... Bc5 $10 { Giuoco Piano. Most common response. } 4. c3 $10 { Classical Variation. Most common response. +0.2. 30W/47T/24B. } (4. O-O $10 { 2nd most common response. +0.1 31W/43T/26B. }) (4. d3 $10 { Giuoco Pianissimo, alternative move order. 3rd most common response. +0.1. 31W/42T/27B. }) (4. b4 $15 { Evans Gambit. 4th most common response. -0.2. 31W/37T/32B. }) (4. d4 $15 { Rosentreter Gambit. Uncommon response. -0.2 }) *
+
+
+[Event "Italian Game, Opening Tree (White): 4.c3 - Classical Variation"]
+[Date "2021.10.25"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C54"]
+[Opening "Italian Game: Classical Variation, Giuoco Pianissimo"]
+[StudyName "Italian Game, Opening Tree (White)"]
+[ChapterName "4.c3 - Classical Variation"]
+[ChapterURL "https://lichess.org/study/ok0Qe3CX/ENOtkGZA"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"]
+[SetUp "1"]
+[UTCDate "2021.10.25"]
+[UTCTime "22:51:11"]
+
+4. c3 $10 { Classical Variation. Most common response. +0.2 30W/47T/24B. } 4... Nf6 $10 { Classical Variation, continued. Overwhelmingly most common response. } (4... Qe7 $14 { Classical Variation, Closed. 2nd most common response. }) (4... d6 $14 { 3rd most common response. }) (4... Bb6 $14 { 4th most common response. }) 5. d3 $10 { Giuoco Pianissimo. Most common response. +0.1. Highest wins/draws (78%). 30W/48T/22B. } (5. d4 $10 { Center Attack. 2nd most common response. +0.1. 24W/47T/29B. }) (5. b4 $15 { Bird's Attack. 3rd most common response. -0.1. 34W/34T/32B. }) *
+
+
+[Event "Italian Game, Opening Tree (White): 3.Nf6 - Two Knights Defense"]
+[Date "2021.10.26"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C55"]
+[Opening "Italian Game: Two Knights Defense, Modern Bishop's Opening"]
+[StudyName "Italian Game, Opening Tree (White)"]
+[ChapterName "3.Nf6 - Two Knights Defense"]
+[ChapterURL "https://lichess.org/study/ok0Qe3CX/CSbR45J7"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3"]
+[SetUp "1"]
+[UTCDate "2021.10.26"]
+[UTCTime "02:26:37"]
+
+{ 3.Nf6, the Two Knights Defense, is the 2nd of the two most common responses to the Italian Game, along with the Giuoco Piano. }
+3... Nf6 $10 { Two Knights Defense. 2nd most common response. } 4. d3 $10 { Modern Bishop's Opening. Most common response. +0.2. Highest wins/draws (75%). 34W/42T/25B. } (4. Ng5 $10 { Knight Attack. 2nd most common response. 0.0. Highest wins (37%). 37W/35T/27B. } 4... d5 5. exd5 Nxd5? 6. Nxf7 { Fried Liver Attack. +0.8. 53W/18T/29B. } (6. d4 { Lolli Attack. +0.9. W63/7T/30B. })) (4. d4 $10 { Open Variation. 3rd most common response. 0.0 30W/38T/32B. }) (4. Nc3 $10 { Four Knights Game. 4th most common response. 0.0. Highest draws (49%). 18W/49T/33B. }) *
+
+
+[Event "Italian Game, Opening Tree (White): 3.Be7 - Hungarian Defense"]
+[Date "2021.10.26"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C50"]
+[Opening "Italian Game: Hungarian Defense"]
+[StudyName "Italian Game, Opening Tree (White)"]
+[ChapterName "3.Be7 - Hungarian Defense"]
+[ChapterURL "https://lichess.org/study/ok0Qe3CX/AWFZSqDx"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3"]
+[SetUp "1"]
+[UTCDate "2021.10.26"]
+[UTCTime "03:15:03"]
+
+{ 3.Be7, the Hungarian Defense, is the 3rd most common response to the Italian Game. It is seen much less often than the Giuoco Piano or Two Knights Defense. }
+3... Be7 $14 { Hungarian Defense. 3rd most common response. } 4. d4 $10 { Most common response. +0.4. Highest wins (45%) and highest wins/draws (80%). 45W/35T/20B. } (4. O-O $10 { 2nd most common response. +0.3. 41W/36T/22B. }) (4. d3 $10 { 3rd most common response. +0.5. 39W/32T/28B. }) (4. c3 $10 { 4th most common response. +0.3 Low wins (29%). 29W/42T/29B. }) *
+
+

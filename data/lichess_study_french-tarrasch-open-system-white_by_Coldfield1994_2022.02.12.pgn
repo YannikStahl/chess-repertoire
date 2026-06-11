@@ -1,0 +1,244 @@
+[Event "French, Tarrasch, Open System (White): Opening Position : French Tarrasch"]
+[Date "2022.02.12"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C05"]
+[Opening "French Defense: Tarrasch Variation, Closed Variation"]
+[StudyName "French, Tarrasch, Open System (White)"]
+[ChapterName "Opening Position : French Tarrasch"]
+[ChapterURL "https://lichess.org/study/9sHSF4Yq/Uaq9Nup3"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[UTCDate "2022.02.12"]
+[UTCTime "02:51:02"]
+
+{ [%csl Ge4][%cal Ge2e4] }
+1. e4 { [%csl Ge4,Ge6][%cal Ge7e6] } 1... e6 { [%csl Ge6,Ge4,Gd4][%cal Gd2d4] } 2. d4 { [%csl Ge6,Ge4,Gd4,Gd5][%cal Gd7d5] } 2... d5 { [%csl Ge6,Gd5,Gd4,Ge4,Gd2][%cal Gb1d2] } 3. Nd2 { : The opening position of the Tarrasch Variation of the French Defense.
+The Tarrasch Variation is an extremely popular response to the French Defense. It is a strong alternative to the Paulsen Variation, 3.Nc3, that has dual purpose. It allows white to both avoid the uncomfortable Winnower pin, 3...Bb4, and support the d4 pawn with c3, forming a strong pawn chain. In return for these advantages, white temporarily obstructs its queen and dark-squared bishop, and gives up on aggressive knight maneuvers resulting from Nc3. There are several responses black could play: } { [%csl Ge6,Gd5,Gd4,Ge4,Gd2] } 3... Nf6 { Closed Variation. Black's most common response. While slightly weaker theoretically compared to 3...c4, practically this gives black stronger chances at a win. This response puts more pressure on the e4 pawn, forcing it to advance to e5, slightly overextending. This study won't cover this variation. See Coldfield1994's other studies for analysis of the Closed Variation. } (3... c5 { Open System. Black's 2nd most common response, seen more at high-level. This response is black's strongest, as it instantly brings black close to equality at the cost of being very drawish. Black simply puts more pressure on the d4 pawn since the queen's defense of it is obstructed by the knight. This study will follow this response. }) (3... Be7 { Morozevich Variation. Uncommon response, seen more at high level. Usually considered a waiting move, this simply develops the bishop in preparation to castle. Black can then develop advantageously in response to white's choice in development, at the cost of some tempo. This can throw white out of theory, and is therefore seen more at high level. This study won't cover this variation. See Coldfield1994's other studies for analysis of the Morozevich Variation. }) (3... dxe4 { Rubenstein Variation transposition. Black's 3rd most common response. At the cost of some developmental advantage, black can simplify the position and avoid theory by exchanging pawns. After recapture with 4.Nxe4, black argues that its developmental disadvantage is balanced by white's misplaced/overextended knight. However, at high-level this practically is weaker than 3...c5 with fewer draws and wins. This study won't cover this transposition. See Coldfield1994's other studies for analysis of the Rubenstein Variation. }) (3... Nc6? { Guimard Defense. Uncommon response, seen more at low-level. Mistake. This obstructs black's c-pawn from advancing to c5, giving up some possible pressure on d4. This allows white to more easily stabilize its structure and set up its attack. Due to the variation's rarity, black sees higher wins at high level but lower draws/wins, and is best played when a win is needed with black. This study won't cover this variation. See Coldfield1994's other studies for analysis of the Guimard Defense. }) (3... a6 { Modern System. Uncommon response. One of black's stronger theoretical responses, at high-level it practically sees more wins at the cost of slightly lower wins/draws, through this may be due to its relative rarity. The response defends b5, preventing white from any bishop checks before beginning to attack white's center while white is still developing its structure. This study won't cover this variation. See Coldfield1994's other studies for analysis of the Modern System. }) (3... f5? { Haberditz Variation. Uncommon response. Mistake. Black attempts to pressure e4, but white can take either pawn or push to e5 and gain an advantage, as black now has an overextended pawn and weak king with an exchange, or cannot easily attack white's pawn chain with e5. }) (3... c6? { Uncommon response. Mistake. Black attempts to reinforce its pawns creating a pawn triangle; however, this gives white tempo to develop its structure. }) (3... h6? { Uncommon response. Mistake. Black attempts to defend g5 from any future bishop or knight attacks; however, this gives white tempo to develop its structure. }) *
+
+
+[Event "French, Tarrasch, Open System (White): French Tarrasch + 3...c5 : Open System"]
+[Date "2022.02.12"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "French, Tarrasch, Open System (White)"]
+[ChapterName "French Tarrasch + 3...c5 : Open System"]
+[ChapterURL "https://lichess.org/study/9sHSF4Yq/CvoAdNUN"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnbqkbnr/pp3ppp/4p3/2pp4/3PP3/8/PPPN1PPP/R1BQKBNR w KQkq - 0 4"]
+[SetUp "1"]
+[UTCDate "2022.02.12"]
+[UTCTime "05:03:43"]
+
+{ The Open System is black's 2nd most common response, seen more at high-level. This response is black's strongest, as it instantly brings black close to equality at the cost of being very drawish. Black simply puts more pressure on the d4 pawn since the queen's defense of it is obstructed by the knight. }
+4. exd5 { White's most common response. This immediately breaks open the center, forcing black to either overextend its central pawns with exd5, or recapture with the queen, which can be targeted for tempo development. This also often sacrifices the d5 pawn temporarily. } (4. Ngf3!! { Euwe-Keres Line. White's strongest, 2nd most common response. White develops its knight, defending the d4 pawn and preparing to castle king's side. }) (4. c3?! { Suchting Line. White's 3rd most common response, seen more at low-level. Inaccuracy. Black can trade down the center without any real positional disadvantage, leaving white with an isolated queen's pawn that is difficult to defend and a weaker king. }) (4. dxc5 { White's 4th most common response. This trades off the central pawn, opening up white's d-file and allowing white to develop more aggressively. Many prefer to wait until black's dark-squared bishop moves once to trade, as this gains white a tempo after recapture. However, white can use the early opening of the center just as advantageously in this position. }) (4. Bb5+ { Uncommon response. White can check black's king, forcing black to trade light-squared bishops. This increases the likelihood of a draw as there are fewer pieces on the board, and lets black easily trade off its weak French bishop. }) *
+
+
+[Event "French, Tarrasch, Open System (White): Open System + 4.Ngf3 : Euwe-Keres Line"]
+[Date "2022.03.06"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "French, Tarrasch, Open System (White)"]
+[ChapterName "Open System + 4.Ngf3 : Euwe-Keres Line"]
+[ChapterURL "https://lichess.org/study/9sHSF4Yq/QqI41nOD"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnbqkbnr/pp3ppp/4p3/2pp4/3PP3/5N2/PPPN1PPP/R1BQKB1R b KQkq - 1 4"]
+[SetUp "1"]
+[UTCDate "2022.03.06"]
+[UTCTime "17:48:32"]
+
+{ White develops its knight, defending the d4 pawn and preparing to castle king's side. }
+4... cxd4! { Black's strongest, most common response, seen more at high-level. Black begins a pawn trade, removing one of white's central pawns, beginning to simplify the position. } (4... Nc6?! { Black's 2nd most common response. Inaccuracy. This simply develops the knight, putting another attacker on white's d4 pawn, threatening to take. However, if black tries to now simplify the position, black ends up with an isolated queen's pawn, which is difficult to defend. }) (4... Nf6 { Black's 3rd most common response, seen more at high-level. This develops the knight, putting a second attacker on e4. It promotes white to play e5, pushing away black's knight to d7. }) (4... dxe4?? { Uncommon response. Slight blunder. This trades central pawns like the Rubenstein Variation. However, unlike the Rubenstein, when white recaptures with Nxd4, white's d4 pawn is defended twice, allowing white to offer a queen trade when black captures with cxd4. Accepting or declining the trade leaves white with a developmental advantage. }) (4... a6?! { Uncommon response. Inaccuracy. This defends the b5 square, preventing any bishop checks or pins. However, this gives white tempo to continue development in in the center with Bd3 or start to break open the center with dxc5. }) *
+
+
+[Event "French, Tarrasch, Open System (White): Euwe-Keres Line + 4...cxd4"]
+[Date "2022.03.06"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "French, Tarrasch, Open System (White)"]
+[ChapterName "Euwe-Keres Line + 4...cxd4"]
+[ChapterURL "https://lichess.org/study/9sHSF4Yq/30lYVi6t"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnbqkbnr/pp3ppp/4p3/3p4/3pP3/5N2/PPPN1PPP/R1BQKB1R w KQkq - 0 5"]
+[SetUp "1"]
+[UTCDate "2022.03.06"]
+[UTCTime "19:34:24"]
+
+{ Black begins a pawn trade, removing one of white's central pawns, beginning to simplify the position. }
+5. Nxd4 { White's most common response. White immediately recaptures with its knight, centralizing it. } (5. exd5 { White's 2nd most common response, seen more at high-level. See Chapter X for transposition. }) (5. Bb5+?! { Uncommon response. Inaccuracy. White checks black's king, forcing black to intercept. Black's best option is to offer a bishop trade, which white takes. This trade removes black's bad French bishop, and is a slight mistake for white. }) 5... Nc6 { Black's most common response. This develops the queen's side knight, both offering a knight trade and threatening to take the d4 knight. } (5... Nf6 { Black's 2nd most common, strong response. This develops the king's side knight, adding a second attacker to e4, pressuring it to trade with exd5, which can now be recaptured with the knight, preserving black's pawn chain. }) (5... dxe4? { Black's 3rd most common response. Mistake. Black trades its other pawn, opening up the center further. However, this develops white's other knight to the center with Nxe4, simultaneously defending the d4 knight with the queen. Black cannot continue to attack the d4 knight with e5, as after Nb5 and a queen trade that loses white's castling rights, black cannot defend against Nc7, forking the rook and king without sacrificing its dark-squared bishop. }) (5... e5?? { Uncommon response. Slight blunder. This pressures the d4 knight, forcing it to move. However, this breaks black's pawn chain, undefending the d5 pawn. White can also counter-attack e5 by simply retreating with N4f3. }) (5... Bc5?? { Uncommon response. Slight blunder. Black develops its bishop, attacking the d4 knight. However, white can counter-attack with N2b3, threatening the dark-squared bishop, forcing it to retreat or trade, losing the bishop pair. This counter-attack also helps develop the d2 knight. }) (5... Ne7 { Uncommon, strong response. This develops the king's side knight, defending the d5 pawn again and preserving black's pawn chain in a trade. This also prevents white from later pinning the knight to the queen, enables a Nf5 jump in the future, and defends the c6 square for when black develops its other knight. However, this temporarily obstructs the queen and dark-squared bishop. }) *
+
+
+[Event "French, Tarrasch, Open System (White): Euwe-Keres Line + 4...cxd4, 5.Nxd4 Nc6"]
+[Date "2022.03.07"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "French, Tarrasch, Open System (White)"]
+[ChapterName "Euwe-Keres Line + 4...cxd4, 5.Nxd4 Nc6"]
+[ChapterURL "https://lichess.org/study/9sHSF4Yq/HnVPEWEh"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "r1bqkbnr/pp3ppp/2n1p3/3p4/3NP3/8/PPPN1PPP/R1BQKB1R w KQkq - 1 6"]
+[SetUp "1"]
+[UTCDate "2022.03.07"]
+[UTCTime "17:42:23"]
+
+{ Black trades pawns and develops the queen's side knight, both offering a knight trade and threatening to take the d4 knight. }
+6. Bb5! { White's strongest, most common response. This develops the light-squared bishop, pinning black's knight to the king and preparing white to castle king's side. It also threatens Nxc6, which would end with a king-rook fork if undefended. } (6. Nxc6 { White's 2nd most common response. This simply trades knights, reducing the tension in the center, allowing white to develop normally by defending the e4 pawn and attacking the center with c4. }) (6. c3?! { Uncommon response. Inaccuracy. White defends its d4 knight, opening the queen's diagonal. However, black can still trade knights, as this will trade everything in the center, leaving white's queen slightly overextended and its king weak. }) 6... Bd7! { Black's strongest, most common response. This defends the c6 knight, preventing a king-rook fork after trades. If white trades knights, it also forces white to retreat its bishop. Lastly, it also vacates the c8 square for the rook or queen in the future. } (6... Qb6? { Uncommon response. Mistake. Black develops its queen aggressively, defending the c6 knight and threatening to take the d4 knight. However, white can now trade central pawns with exd5, forcing black to recapture with the pawn, leaving it with an isolated pawn. White can not take the knight without hanging its own knight and leaving white with a passed pawn. }) (6... Ne7 { Uncommmon response. This defends the c6 knight, preventing a king-rook fork after trades. If white trades knights, it also forces white to retreat its bishop. However, this does obstruct the normal development of the dark-squared bishop and can tangle up black's pieces while white can reposition more easily. }) *
+
+
+[Event "French, Tarrasch, Open System (White): Euwe-Keres Line + 4...cxd4, 5.Nxd4 Nc6, 6.Bb5 Bd7 : Knight Pin Line"]
+[Date "2022.03.07"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "French, Tarrasch, Open System (White)"]
+[ChapterName "Euwe-Keres Line + 4...cxd4, 5.Nxd4 Nc6, 6.Bb5 Bd7 : Knight Pin Line"]
+[ChapterURL "https://lichess.org/study/9sHSF4Yq/uttFL8Yv"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "r2qkbnr/pp1b1ppp/2n1p3/1B1p4/3NP3/8/PPPN1PPP/R1BQK2R w KQkq - 3 7"]
+[SetUp "1"]
+[UTCDate "2022.03.07"]
+[UTCTime "18:27:16"]
+
+{ White pins black's c6 knight and black defends it, preventing a king-rook fork after trades. If white trades knights, white is forced to retreat its bishop. The c8 square has been vacated for black's rook or queen in the future, and white is prepared to castle king's side. }
+7. Nxc6 (7. Bxc6) (7. exd5) (7. N2b3) (7. N4b3) (7. N4f3) *
+
+
+[Event "French, Tarrasch, Open System (White): Euwe-Keres Line + 4...Nc6? : Nc6? Line"]
+[Date "2022.03.06"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C09"]
+[Opening "French Defense: Tarrasch Variation, Open System, Main Line"]
+[StudyName "French, Tarrasch, Open System (White)"]
+[ChapterName "Euwe-Keres Line + 4...Nc6? : Nc6? Line"]
+[ChapterURL "https://lichess.org/study/9sHSF4Yq/6nDcriVC"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "r1bqkbnr/pp3ppp/2n1p3/2pp4/3PP3/5N2/PPPN1PPP/R1BQKB1R w KQkq - 2 5"]
+[SetUp "1"]
+[UTCDate "2022.03.06"]
+[UTCTime "19:35:01"]
+
+{ This simply develops the knight, putting another attacker on white's d4 pawn, threatening to take. However, if black tries to now simplify the position, black ends up with an isolated queen's pawn, which is difficult to defend. }
+5. exd5! { White's strongest, most common response. This trades pawns in the center, damaging black's king's side pawn chain or overextending its queen, which can be attacked for tempo development. } (5. Bb5?! { White's 2nd most common response. Inaccuracy. White attempts to pin black's knight to the king with its light-squared bishop. However, black can simply push the bishop away with a6 or force white to trade its bishop for the knight. This damages black's pawn structure, but opens up the b-file and wins black the bishop pair. }) (5. c3?! { White's 3rd most common response. Inaccuracy. This defends the d4 pawn while opening up the queen's diagonal. However, this allows black to trade away the central pawns, weakening white's king's safety. }) (5. dxc5?! { Uncommon response. Inaccuracy. White trades central pawns, opening up the center. However, this allows black to develop its bishop advantageously during recapture. Trading pawns should instead be done after black moves its bishop once, gaining a free tempo for white. }) 5... exd5! { Black's strongest, most common response. This simply recaptures the pawn, opening up black's king somewhat, but avoiding tempo attacks that would occur with Qxd5. } (5... Qxd5?! { Black's 2nd most common response. Inaccuracy. This recaptures the pawn with the queen, maintaining black's king's side pawn structure, leaving the king more secure. However, this allows white to gain tempo development by attacking the slightly overextended queen. }) (5... Nxd4?? { Uncommon response. Blunder. Black decides not to recapture the pawn, and instead takes white's other central pawn on d4. However, white can simply trade knights and then later take another of black's pawns, leaving black with an overextended central pawn in addition. }) *
+
+
+[Event "French, Tarrasch, Open System (White): Nc6? Line + 5.exd5 exd5"]
+[Date "2022.03.10"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "French, Tarrasch, Open System (White)"]
+[ChapterName "Nc6? Line + 5.exd5 exd5"]
+[ChapterURL "https://lichess.org/study/9sHSF4Yq/C9bz1ElS"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "r1bqkbnr/pp3ppp/2n5/2pp4/3P4/5N2/PPPN1PPP/R1BQKB1R w KQkq - 0 6"]
+[SetUp "1"]
+[UTCDate "2022.03.10"]
+[UTCTime "19:35:47"]
+
+{ White and black simply trade central pawns, opening up the center somewhat. }
+6. Bb5 { White's most common response. This pins black's knight to its king, indirectly defending d4 and preparing white to castle king's side. } (6. dxc5? { Uncommon response. Mistake. White trades pawns, opening up the center further and reducing tension. However, this allows black to easily develop its bishop by recapturing. }) (6. c3? { Uncommon response. Mistake. This defends the d4 pawn, opening up the queen's diagonal. However, black can trade pawns and knights in the center, leaving both kings slightly exposed and white's d4 knight somewhat tangled. }) (6. Be2? { Uncommon response. Mistake. This develops the bishop, obstructing any checks on the king and preparing castling king's side. However, this is passive compared to Bb5, giving up white's initial tempo advantage. }) (6. Bd3?? { Uncommon response. Slight blunder. White develops its bishop, preparing to castle king's side. However, black can now close up the center with tempo by attacking the bishop with c4, forcing it back to e2. This also locks in white's d2 knight, forcing it to retreat to move. }) (6. Qe2+? { Uncommon response. Mistake. This develops the queen, checking black's king. However, this allows black to develop its bishop, obstructing the check. White can capture black's pawn with dxc5 after, but must after lose tempo moving the queen and king from danger, which will often lose back the pawn. }) *
+
+
+[Event "French, Tarrasch, Open System (White): Nc6? Line + 5.exd5 exd5, 6.Bb5"]
+[Date "2022.03.10"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "French, Tarrasch, Open System (White)"]
+[ChapterName "Nc6? Line + 5.exd5 exd5, 6.Bb5"]
+[ChapterURL "https://lichess.org/study/9sHSF4Yq/ERn36dnG"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "r1bqkbnr/pp3ppp/2n5/1Bpp4/3P4/5N2/PPPN1PPP/R1BQK2R b KQkq - 1 6"]
+[SetUp "1"]
+[UTCDate "2022.03.10"]
+[UTCTime "20:47:32"]
+
+{ White pins black's knight to its king with its light-squared bishop, indirectly defending d4 and preparing white to castle king's side. }
+6... Nf6? { Black's most common response, seen more at low-level. Mistake. Black simply develops its knight, defending the d5 pawn and preparing to castle. However, this gives white the tempo to castle, taking away many of black's options to counter white's threats in the center. } (6... Bd6 { Black's 2nd most common, strong response, seen more at high-level. Black simply develops the bishop, preparing to castle king's side. }) (6... Qe7+ { Black's 3rd most common, strong response. This develops the queen, checking white's king and forcing white to block or give up castling rights. }) (6... Bd7?? { Uncommon response. Slight blunder. This defends black's knight, preventing white from damaging black's pawn structure with a bishop-knight trade. However, this gives white the tempo to castle, taking away many of black's options to counter white's threats in the center. }) (6... cxd4 { Uncommon, strong response. This begins to trade pawns in the center, reducing the tension in the center. }) (6... a6? { Uncommon response. Mistake. This pressures white's light-squared bishop, forcing it to retreat or trade. However, because black has wasted a tempo pressuring the bishop, white now gains a positional advantage trading the bishop for black's knight. }) (6... Qb6? { Uncommon response. Mistake. This develops the queen, defending the c6 knight, defending the c5 pawn, pressuring white's light-squared bishop, and x-ray attacking the d4 pawn. However, white can simply defend the bishop with a4 or c4 in addition to developing its queen with Qe2+, defending the light-squared bishop. }) *
+
+
+[Event "French, Tarrasch, Open System (White): Nc6? Line + 5.exd5 exd5, 6.Bb5 Bd6"]
+[Date "2022.03.10"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "French, Tarrasch, Open System (White)"]
+[ChapterName "Nc6? Line + 5.exd5 exd5, 6.Bb5 Bd6"]
+[ChapterURL "https://lichess.org/study/9sHSF4Yq/GMs7CfS6"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "r1bqk1nr/pp3ppp/2nb4/1Bpp4/3P4/5N2/PPPN1PPP/R1BQK2R w KQkq - 2 7"]
+[SetUp "1"]
+[UTCDate "2022.03.10"]
+[UTCTime "23:33:59"]
+
+{ Black simply develops the bishop, preparing to castle king's side. }
+7. dxc5 (7. O-O) (7. Qe2+) *
+
+
+[Event "French, Tarrasch, Open System (White): Nc6? Line + 5.exd5 exd5, 6.Bb5 Qe7+"]
+[Date "2022.03.10"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "French, Tarrasch, Open System (White)"]
+[ChapterName "Nc6? Line + 5.exd5 exd5, 6.Bb5 Qe7+"]
+[ChapterURL "https://lichess.org/study/9sHSF4Yq/vrYjdMsj"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "r1b1kbnr/pp2qppp/2n5/1Bpp4/3P4/5N2/PPPN1PPP/R1BQK2R w KQkq - 2 7"]
+[SetUp "1"]
+[UTCDate "2022.03.10"]
+[UTCTime "23:46:58"]
+
+ *
+
+
+[Event "French, Tarrasch, Open System (White): Nc6? Line + 5.exd5 exd5, 6.Bb5 Nf6? : Nf6? Mistake Continuation"]
+[Date "2022.03.10"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "French, Tarrasch, Open System (White)"]
+[ChapterName "Nc6? Line + 5.exd5 exd5, 6.Bb5 Nf6? : Nf6? Mistake Continuation"]
+[ChapterURL "https://lichess.org/study/9sHSF4Yq/kvbvSg5y"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "r1bqkb1r/pp3ppp/2n2n2/1Bpp4/3P4/5N2/PPPN1PPP/R1BQK2R w KQkq - 2 7"]
+[SetUp "1"]
+[UTCDate "2022.03.10"]
+[UTCTime "23:33:28"]
+
+{ Black simply develops its knight, defending the d5 pawn and preparing to castle. However, this gives white the tempo to castle, taking away many of black's options to counter white's threats in the center. }
+7. O-O! { White's strongest, most common response. This castles, defending the king and preparing to check white's king with Re1. } (7. Qe2+) (7. Ne5) (7. dxc5) 7... Be7 { Black's most common, strong response. This develops the bishop, obstructing any checks and preparing black to castle. } (7... Be6 { Uncommon, strong response. This develops the light-squared bishop, obstructing any checks while avoiding moving the dark-squared bishop, which can lose tempo during a recapture of c5. However, this leaves the black king still a move away from castling. }) (7... Bd6?! { Uncommon response. Inaccuracy. This develops the dark-squared bishop, preparing to castle. However, while black will defend against a rook check with Be6, this move order allows white to better attack the bishops, allowing a white to win the bishop pair in a trade. }) *
+
+
+[Event "French, Tarrasch, Open System (White): Open System + 4.exd5"]
+[Date "2022.03.06"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "French, Tarrasch, Open System (White)"]
+[ChapterName "Open System + 4.exd5"]
+[ChapterURL "https://lichess.org/study/9sHSF4Yq/6naV4mPQ"]
+[Annotator "https://lichess.org/@/Coldfield1994"]
+[FEN "rnbqkbnr/pp3ppp/4p3/2pP4/3P4/8/PPPN1PPP/R1BQKBNR b KQkq - 0 4"]
+[SetUp "1"]
+[UTCDate "2022.03.06"]
+[UTCTime "20:30:14"]
+
+ *
+
+

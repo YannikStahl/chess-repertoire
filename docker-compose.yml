@@ -1,0 +1,10 @@
+services:
+  repertoire:
+    build: .
+    ports:
+      - "3001:3001"
+    volumes:
+      # Point this at a git repo on the host so your repertoire
+      # survives the container and you can push from your terminal.
+      - ./data:/app/data
+    restart: unless-stopped
