@@ -6,7 +6,7 @@ import { epdToFen, figurine, gradeSrs, isDue, newSrsItem, setupMoveFor, sideToMo
 // Today's deck: every position where it's our turn and we have a repertoire move,
 // optionally restricted to a category (by inherited membership). Unseen positions
 // count as new (due immediately).
-function buildDeck(rep, training, category, categoryMembers) {
+function buildDeck(rep, training, category, categoryMembers, skipSetup) {
   const inCategory = category ? categoryMembers.get(category) : null;
   const deck = [];
   for (const [epd, node] of Object.entries(rep.positions)) {
@@ -16,8 +16,12 @@ function buildDeck(rep, training, category, categoryMembers) {
     if (answers.length === 0) {
       // No explicit move — a category setup may still provide the answer.
       const f = setupMoveFor(rep, epd, categoryMembers);
-      if (!f) continue;
+      if (!f || skipSetup) continue;
       answers = [f];
+    } else if (skipSetup) {
+      // Stored move(s) identical to what the setup would play: not a decision.
+      const f = setupMoveFor(rep, epd, categoryMembers);
+      if (f && answers.every((m) => m.san === f.san)) continue;
     }
     const key = `${rep.color}:${epd}`;
     const item = training.items[key] || newSrsItem();
@@ -32,8 +36,8 @@ function buildDeck(rep, training, category, categoryMembers) {
 
 // Spaced-repetition single-position drill. Remounted (via key) when the category
 // changes, so the deck is rebuilt fresh.
-export default function PositionDrill({ rep, training, category, categoryMembers, onGrade }) {
-  const [session] = useState(() => buildDeck(rep, training, category, categoryMembers));
+export default function PositionDrill({ rep, training, category, categoryMembers, skipSetup, onGrade }) {
+  const [session] = useState(() => buildDeck(rep, training, category, categoryMembers, skipSetup));
   const [idx, setIdx] = useState(0);
   const [state, setState] = useState("ask"); // ask | correct | wrong
   const [score, setScore] = useState({ right: 0, wrong: 0 });

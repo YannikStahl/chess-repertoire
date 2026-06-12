@@ -114,10 +114,10 @@
       "lapses": 0
     },
     "black:rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq -": {
-      "ease": 2.6499999999999995,
-      "interval": 8,
-      "due": "2026-06-20",
-      "reps": 3,
+      "ease": 2.6999999999999993,
+      "interval": 21,
+      "due": "2026-07-03",
+      "reps": 4,
       "lapses": 0
     },
     "black:rnbqkb1r/pppppppp/5n2/8/3P4/5N2/PPP1PPPP/RNBQKB1R b KQkq -": {
@@ -385,6 +385,69 @@
       "due": "2026-06-12",
       "reps": 0,
       "lapses": 1
+    },
+    "black:rnbqkb1r/pppppppp/5n2/8/3P1B2/8/PPP1PPPP/RN1QKBNR b KQkq -": {
+      "ease": 2.55,
+      "interval": 1,
+      "due": "2026-06-13",
+      "reps": 1,
+      "lapses": 0
+    },
+    "black:rnbqkb1r/pppppp1p/5np1/8/3P1B2/5N2/PPP1PPPP/RN1QKB1R b KQkq -": {
+      "ease": 2.55,
+      "interval": 1,
+      "due": "2026-06-13",
+      "reps": 1,
+      "lapses": 0
+    },
+    "black:rnbqk2r/ppppppbp/5np1/8/3P1B2/4PN2/PPP2PPP/RN1QKB1R b KQkq -": {
+      "ease": 2.55,
+      "interval": 1,
+      "due": "2026-06-13",
+      "reps": 1,
+      "lapses": 0
+    },
+    "black:rnbq1rk1/ppppppbp/5np1/8/3P1B2/4PN2/PPP1BPPP/RN1QK2R b KQ -": {
+      "ease": 2.55,
+      "interval": 1,
+      "due": "2026-06-13",
+      "reps": 1,
+      "lapses": 0
+    },
+    "black:rnbq1rk1/ppp1ppbp/3p1np1/8/3P1B2/4PN1P/PPP1BPP1/RN1QK2R b KQ -": {
+      "ease": 2.3,
+      "interval": 0,
+      "due": "2026-06-12",
+      "reps": 0,
+      "lapses": 1
+    },
+    "black:r1bq1rk1/pppnppbp/3p1np1/8/3P1B2/4PN1P/PPP1BPP1/RN1Q1RK1 b - -": {
+      "ease": 2.3,
+      "interval": 0,
+      "due": "2026-06-12",
+      "reps": 0,
+      "lapses": 1
+    },
+    "black:r1b1qrk1/pppnppbp/3p1np1/8/2PP1B2/4PN1P/PP2BPP1/RN1Q1RK1 b - -": {
+      "ease": 2.3,
+      "interval": 0,
+      "due": "2026-06-12",
+      "reps": 0,
+      "lapses": 1
+    },
+    "black:r1b1qrk1/pppnppbp/3p2p1/8/2PPn3/4PN1P/PP2BPPB/RN1Q1RK1 b - -": {
+      "ease": 2.3,
+      "interval": 0,
+      "due": "2026-06-12",
+      "reps": 0,
+      "lapses": 1
+    },
+    "black:r1b1qrk1/pppn1pbp/3p2p1/4p3/2PPn3/4PN1P/PPQ1BPPB/RN3RK1 b - -": {
+      "ease": 2.55,
+      "interval": 1,
+      "due": "2026-06-13",
+      "reps": 1,
+      "lapses": 0
     }
   }
 }

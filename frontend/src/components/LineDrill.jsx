@@ -24,14 +24,14 @@ function replay(startFen, line) {
     } catch {
       made = chess.move({ from: m.uci.slice(0, 2), to: m.uci.slice(2, 4), promotion: m.uci.slice(4) || undefined });
     }
-    return { san: made.san, from: made.from, to: made.to, fenBefore, fenAfter: chess.fen(), ours: !!m.mine };
+    return { san: made.san, from: made.from, to: made.to, fenBefore, fenAfter: chess.fen(), ours: !!m.mine, isSetup: !!m.setup };
   });
 }
 
 // Play whole lines from the category's starting position: the opponent's expected
 // replies are auto-played; you must recall your moves. A mistake reveals the
 // correct move, plays it, and you continue from there.
-export default function LineDrill({ rep, training, category, categoryMembers, onGrade }) {
+export default function LineDrill({ rep, training, category, categoryMembers, skipSetup, onGrade }) {
   const startEpd = useMemo(() => categoryRoot(rep, category), [rep, category]);
   const startFen = epdToFen(startEpd);
 
@@ -43,11 +43,14 @@ export default function LineDrill({ rep, training, category, categoryMembers, on
       const j = Math.floor(Math.random() * (i + 1));
       [ls[i], ls[j]] = [ls[j], ls[i]];
     }
+    // With "skip setup" on, only lines containing at least one real decision
+    // (a stored move of ours that isn't setup-derived) are worth playing.
+    if (skipSetup) ls = ls.filter((line) => line.some((m) => m.mine && !m.setup));
     if (mainOnly) ls = ls.filter(isMainLine);
     else ls.sort((a, b) => isMainLine(b) - isMainLine(a)); // main lines first
     return ls;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rep, startEpd, round, mainOnly, categoryMembers]);
+  }, [rep, startEpd, round, mainOnly, skipSetup, categoryMembers]);
 
   const [lineIdx, setLineIdx] = useState(0);
   const [step, setStep] = useState(0);
@@ -60,26 +63,28 @@ export default function LineDrill({ rep, training, category, categoryMembers, on
   const cur = plies[step];
   const fen = step > 0 ? plies[step - 1].fenAfter : startFen;
   const lastMove = step > 0 ? [plies[step - 1].from, plies[step - 1].to] : null;
-  // It's our move (board is live) whenever the current ply is ours — including
-  // while we're being shown the correct move and must replay it.
-  const awaitingMe = !done && !!cur && cur.ours;
+  // A ply is auto-played when it's the opponent's, or one of our setup moves
+  // while "skip setup" is on (the scheme plays itself; you drill the decisions).
+  const autoPlayed = (p) => !p.ours || (skipSetup && p.isSetup);
+  // It's our move (board is live) whenever the current ply is ours and not
+  // auto-played — including while replaying the correct move after a mistake.
+  const awaitingMe = !done && !!cur && cur.ours && !(skipSetup && cur.isSetup);
 
-  // Drive the line forward: auto-play opponent moves and roll over to the next
-  // line when one finishes. Our moves (first try or replaying after a mistake)
-  // wait for input.
+  // Drive the line forward: auto-play non-asked moves and roll over to the next
+  // line when one finishes. Asked moves wait for input.
   useEffect(() => {
     if (done || plies.length === 0) return;
     if (step >= plies.length) {
       const t = setTimeout(nextLine, LINE_DONE_DELAY);
       return () => clearTimeout(t);
     }
-    if (!plies[step].ours) {
+    if (autoPlayed(plies[step])) {
       const t = setTimeout(() => setStep((s) => s + 1), OPP_DELAY);
       return () => clearTimeout(t);
     }
     // our turn → wait for input
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [step, lineIdx, plies, done]);
+  }, [step, lineIdx, plies, done, skipSetup]);
 
   function nextLine() {
     setLineIdx((i) => i + 1);

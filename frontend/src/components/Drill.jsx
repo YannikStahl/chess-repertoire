@@ -9,6 +9,8 @@ export default function Drill({ rep, training, categoryMembers, onGrade }) {
   const categories = useMemo(() => [...categoryMembers.keys()].sort((a, b) => a.localeCompare(b)), [categoryMembers]);
   const [category, setCategory] = useState(null);
   const [mode, setMode] = useState("positions"); // positions | lines
+  const [skipSetup, setSkipSetup] = useState(false);
+  const hasSetups = !!(rep.setups && Object.keys(rep.setups).length);
 
   return (
     <div className="drill-hub">
@@ -17,6 +19,15 @@ export default function Drill({ rep, training, categoryMembers, onGrade }) {
           <button className={mode === "positions" ? "on" : ""} onClick={() => setMode("positions")}>Positions</button>
           <button className={mode === "lines" ? "on" : ""} onClick={() => setMode("lines")}>Lines</button>
         </div>
+        {hasSetups && (
+          <button
+            className={`tb-btn ml-only${skipSetup ? " on" : ""}`}
+            title="Don't quiz moves your setup already answers — drill only real decisions"
+            onClick={() => setSkipSetup((v) => !v)}
+          >
+            ⚙ skip setup moves
+          </button>
+        )}
         {categories.length > 0 && (
           <div className="cat-filter">
             <button className={category === null ? "on" : ""} onClick={() => setCategory(null)}>All</button>
@@ -30,9 +41,9 @@ export default function Drill({ rep, training, categoryMembers, onGrade }) {
       </div>
 
       {mode === "positions" ? (
-        <PositionDrill key={`p:${category}`} rep={rep} training={training} category={category} categoryMembers={categoryMembers} onGrade={onGrade} />
+        <PositionDrill key={`p:${category}:${skipSetup}`} rep={rep} training={training} category={category} categoryMembers={categoryMembers} skipSetup={skipSetup} onGrade={onGrade} />
       ) : (
-        <LineDrill key={`l:${category}`} rep={rep} training={training} category={category} categoryMembers={categoryMembers} onGrade={onGrade} />
+        <LineDrill key={`l:${category}:${skipSetup}`} rep={rep} training={training} category={category} categoryMembers={categoryMembers} skipSetup={skipSetup} onGrade={onGrade} />
       )}
     </div>
   );

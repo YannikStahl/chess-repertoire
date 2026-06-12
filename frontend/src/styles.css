@@ -285,6 +285,7 @@ body {
 .cat-gear.has { color: var(--gold); }
 .setup-editor { display: flex; gap: 6px; margin: 6px 0 2px; }
 .setup-editor .cat-input { flex: 1; min-width: 0; }
+.cleanup-btn { width: 100%; margin-top: 12px; }
 
 /* setup chip + main-line stars */
 .chip-setup { border: 1px dashed var(--gold); }

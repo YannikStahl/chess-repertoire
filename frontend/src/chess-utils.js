@@ -76,6 +76,76 @@ export function setupMoveFor(rep, epd, categoryMembers) {
   return cats.length ? setupMoveFromCats(rep, epd, cats) : null;
 }
 
+// Find stored "mine" edges that are pure setup-following: the move equals the
+// setup's choice at that position, and nothing downstream contains anything
+// worth keeping (annotations, category tags, exceptions, quality/main flags,
+// conflicts). Returns [{ epd, san }] — safe to remove and prune.
+export function findRedundantSetupEdges(rep) {
+  if (!rep.setups || Object.keys(rep.setups).length === 0) return [];
+
+  // Inherited categories per position (union over all stored paths).
+  const cats = new Map([[START_EPD, new Set(rep.positions[START_EPD]?.categories || [])]]);
+  const queue = [START_EPD];
+  while (queue.length) {
+    const epd = queue.shift();
+    const cur = cats.get(epd);
+    for (const m of rep.positions[epd]?.moves || []) {
+      if (!m.target || !rep.positions[m.target]) continue;
+      const merged = new Set(cur);
+      for (const c of rep.positions[m.target].categories || []) merged.add(c);
+      const existing = cats.get(m.target);
+      if (!existing) {
+        cats.set(m.target, merged);
+        queue.push(m.target);
+      } else {
+        let grew = false;
+        for (const c of merged) if (!existing.has(c)) { existing.add(c); grew = true; }
+        if (grew) queue.push(m.target);
+      }
+    }
+  }
+
+  const boringMemo = new Map();
+  function boring(epd, stack) {
+    if (!rep.positions[epd]) return true; // off-graph
+    if (stack.has(epd)) return true; // transposition cycle within this check
+    if (boringMemo.has(epd)) return boringMemo.get(epd);
+    const node = rep.positions[epd];
+    let ok = !node.annotation && !(node.categories || []).length;
+    if (ok) {
+      stack.add(epd);
+      const ours = sideToMove(epd) === rep.color;
+      for (const m of node.moves || []) {
+        if (m.quality || m.main || m.conflict) { ok = false; break; }
+        if (ours && m.mine) {
+          const f = setupMoveFromCats(rep, epd, [...(cats.get(epd) || [])]);
+          if (!f || f.san !== m.san) { ok = false; break; } // exception — keep
+        }
+        if (!boring(m.target, stack)) { ok = false; break; }
+      }
+      stack.delete(epd);
+    }
+    boringMemo.set(epd, ok);
+    return ok;
+  }
+
+  const out = [];
+  for (const [epd, cset] of cats) {
+    if (sideToMove(epd) !== rep.color) continue;
+    const node = rep.positions[epd];
+    if (!node) continue;
+    const mine = (node.moves || []).filter((m) => m.mine);
+    if (mine.length !== 1) continue; // conflicted positions: resolve manually
+    const m = mine[0];
+    if (m.quality || m.main || m.conflict) continue;
+    const f = setupMoveFromCats(rep, epd, [...cset]);
+    if (!f || f.san !== m.san) continue;
+    if (!boring(m.target, new Set())) continue;
+    out.push({ epd, san: m.san });
+  }
+  return out;
+}
+
 // The starting position to drill for a category: the explicitly tagged position
 // nearest the start (or the game start when no category is selected).
 export function categoryRoot(rep, category) {

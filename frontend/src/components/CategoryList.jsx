@@ -13,7 +13,7 @@ import { useState } from "react";
  *   onSetSetup(name, sansArray|null)
  *   onJump(name)
  */
-export default function CategoryList({ categories, active = [], setups = {}, onSetSetup, onJump }) {
+export default function CategoryList({ categories, active = [], setups = {}, onSetSetup, onCleanup, onJump }) {
   const [editing, setEditing] = useState(null);
   const [text, setText] = useState("");
 
@@ -75,6 +75,15 @@ export default function CategoryList({ categories, active = [], setups = {}, onS
             </li>
           ))}
         </ul>
+      )}
+      {Object.keys(setups).length > 0 && (
+        <button
+          className="cat-btn cleanup-btn"
+          title="Remove stored moves that just follow your setups (annotated, tagged, flagged and exception lines are kept)"
+          onClick={onCleanup}
+        >
+          🧹 Clean setup lines
+        </button>
       )}
     </section>
   );

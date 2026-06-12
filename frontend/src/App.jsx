@@ -13,7 +13,7 @@ import GapFinder from "./components/GapFinder.jsx";
 import Drill from "./components/Drill.jsx";
 import { api } from "./api.js";
 import { useEngine } from "./useEngine.js";
-import { START_FEN, START_EPD, toEpd, sideToMove, categoryMembership, setupMoveFromCats } from "./chess-utils.js";
+import { START_FEN, START_EPD, toEpd, sideToMove, categoryMembership, setupMoveFromCats, findRedundantSetupEdges } from "./chess-utils.js";
 
 const EMPTY = []; // stable empty-shapes reference, so toggling off doesn't churn the board
 
@@ -326,6 +326,33 @@ export default function App() {
     });
   }
 
+  // Remove stored moves that just follow a setup (plus their orphaned tails).
+  // Dry-runs on a clone first so the confirm dialog can report exact numbers.
+  function cleanupSetupLines() {
+    const redundant = findRedundantSetupEdges(rep);
+    if (redundant.length === 0) {
+      setToast("nothing to clean — no pure setup-following lines found");
+      setTimeout(() => setToast(""), 3000);
+      return;
+    }
+    const apply = (r) => {
+      for (const { epd: e, san } of redundant) {
+        const pos = r.positions[e];
+        if (!pos) continue;
+        const i = pos.moves.findIndex((m) => m.san === san && m.mine);
+        if (i >= 0) pos.moves.splice(i, 1);
+      }
+      pruneOrphans(r);
+    };
+    const sim = structuredClone(rep);
+    apply(sim);
+    const prunedPositions = Object.keys(rep.positions).length - Object.keys(sim.positions).length;
+    if (!window.confirm(`Remove ${redundant.length} stored move(s) that just follow your setups?\nThis also prunes ${prunedPositions} now-unreachable position(s).\nAnnotated, tagged, flagged or exception lines are kept.`)) return;
+    mutateRep(apply);
+    setToast(`cleaned: −${redundant.length} moves, −${prunedPositions} positions`);
+    setTimeout(() => setToast(""), 3500);
+  }
+
   // Mark / unmark every stored edge of the current line as main.
   function toggleLineMain() {
     const makeMain = lineMainState !== "all";
@@ -503,7 +530,7 @@ export default function App() {
       ) : (
         <main className="main edit-layout">
           <div className="labels-col">
-            <CategoryList categories={allCategories} active={activeCats} setups={rep.setups || {}} onSetSetup={setSetup} onJump={jumpToCategory} />
+            <CategoryList categories={allCategories} active={activeCats} setups={rep.setups || {}} onSetSetup={setSetup} onCleanup={cleanupSetupLines} onJump={jumpToCategory} />
             <GapFinder key={color} color={color} onJump={jumpToEpd} />
           </div>
           <div className="board-col">
