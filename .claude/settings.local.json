@@ -42,7 +42,22 @@
       "Bash(xxd public/engine/stockfish.wasm)",
       "Bash(node /tmp/sfprobe.cjs)",
       "Bash(grep -oE '\"[^\"]*\\\\.wasm\"|wasmBinaryFile[^,;]{0,40}|replace\\\\\\([^\\)]*wasm[^\\)]*\\\\\\)|\\\\.js\",\"\\\\.wasm\"|\\\\.js\"\\\\\\)|locateFile=[^;]{0,80}' bin/stockfish-18-lite-single.js)",
-      "Bash(grep -oE 'self\\\\.location[^;]{0,60}|currentScript[^;]{0,60}|\\\\.replace\\\\\\(/\\\\\\\\?\\\\.js/[^\\)]*\\\\\\)' bin/stockfish-18-lite-single.js)"
+      "Bash(grep -oE 'self\\\\.location[^;]{0,60}|currentScript[^;]{0,60}|\\\\.replace\\\\\\(/\\\\\\\\?\\\\.js/[^\\)]*\\\\\\)' bin/stockfish-18-lite-single.js)",
+      "Bash(node -e 'console.log\\(\"chess.js\", require\\(\"chess.js/package.json\"\\).version\\)')",
+      "Bash(curl -s -m 20 -o /dev/null -w 'HTTP %{http_code}\\\\n' -H 'User-Agent: chess-repertoire' 'https://explorer.lichess.ovh/masters?fen=rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR%20w%20KQkq%20-%200%201&moves=12&topGames=0')",
+      "Bash(curl -s -m 20 -H 'User-Agent: chess-repertoire' 'https://explorer.lichess.ovh/masters?fen=rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR%20w%20KQkq%20-%200%201&moves=12&topGames=0')",
+      "Bash(curl -s -m 20 -o /dev/null -w \"HTTP %{http_code}\\\\n\" \"https://explorer.lichess.ovh/masters?play=e2e4,d7d5\")",
+      "Bash(curl -s -m 20 -o /dev/null -w \"HTTP %{http_code}\\\\n\" \"https://explorer.lichess.ovh/masters\")",
+      "Bash(curl -s -m 20 -o /dev/null -w \"HTTP %{http_code}\\\\n\" \"https://explorer.lichess.ovh/masters/pgn/test\")",
+      "Bash(curl -s -m 20 -o /dev/null -w \"tablebase HTTP %{http_code}\\\\n\" \"https://tablebase.lichess.ovh/standard?fen=4k3/8/8/8/8/8/8/4K2R%20w%20-%20-%200%201\")",
+      "Bash(curl -s -m 20 -o /dev/null -w \"cloud-eval HTTP %{http_code}\\\\n\" \"https://lichess.org/api/cloud-eval?fen=rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR%20w%20KQkq%20-%200%201\")",
+      "Bash(curl -s -m 20 -D - -o /dev/null https://explorer.lichess.ovh/masters?fen=rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR%20w%20KQkq%20-%200%201)",
+      "Bash(curl -s -m 15 -o /dev/null -w 'HTTP %{http_code}\\\\n' -H 'User-Agent: Mozilla/5.0 \\(X11; Linux x86_64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/137.0.0.0 Safari/537.36' -H 'Accept: application/json' -H 'Origin: https://lichess.org' -H 'Referer: https://lichess.org/' 'https://explorer.lichess.ovh/masters?fen=rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR%20w%20KQkq%20-%200%201&moves=12&topGames=0')",
+      "Bash(curl -s -m 15 -o /dev/null -w 'HTTP %{http_code}\\\\n' -H 'User-Agent: Mozilla/5.0 \\(X11; Linux x86_64\\) AppleWebKit/537.36 Chrome/137.0.0.0 Safari/537.36' 'https://explorer.lichess.ovh/masters?variant=standard&fen=rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR%20w%20KQkq%20-%200%201&since=1952&until=2026&moves=12&topGames=15')",
+      "Bash(curl -s -m 15 -o /dev/null -w 'HTTP %{http_code}\\\\n' 'https://explorer.lichess.ovh/lichess?variant=standard&speeds=blitz,rapid,classical&ratings=2200,2500&fen=rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR%20w%20KQkq%20-%200%201')",
+      "Bash(curl -s -m 15 -o /dev/null -w \"HTTP %{http_code}\\\\n\" \"https://explorer.lichess.ovh/player?player=DrNykterstein&color=white&play=&recentGames=0\")",
+      "WebFetch(domain:github.com)",
+      "Bash(node --check backend/server.js)"
     ]
   }
 }

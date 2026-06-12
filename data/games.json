@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "games": [
+    {
+      "id": "g_mqbdcxwa54i4",
+      "white": "",
+      "black": "",
+      "year": null,
+      "event": "",
+      "result": "*",
+      "tags": [],
+      "note": "",
+      "moves": [
+        {
+          "san": "d4",
+          "uci": "d2d4",
+          "comment": ""
+        },
+        {
+          "san": "Nf6",
+          "uci": "g8f6",
+          "comment": ""
+        },
+        {
+          "san": "Nc3",
+          "uci": "b1c3",
+          "comment": ""
+        },
+        {
+          "san": "g6",
+          "uci": "g7g6",
+          "comment": ""
+        },
+        {
+          "san": "e4",
+          "uci": "e2e4",
+          "comment": ""
+        },
+        {
+          "san": "d6",
+          "uci": "d7d6",
+          "comment": ""
+        },
+        {
+          "san": "Be3",
+          "uci": "c1e3",
+          "comment": ""
+        },
+        {
+          "san": "Bg7",
+          "uci": "f8g7",
+          "comment": ""
+        },
+        {
+          "san": "Qd2",
+          "uci": "d1d2",
+          "comment": ""
+        },
+        {
+          "san": "O-O",
+          "uci": "e8g8",
+          "comment": ""
+        },
+        {
+          "san": "O-O-O",
+          "uci": "e1c1",
+          "comment": ""
+        },
+        {
+          "san": "c6",
+          "uci": "c7c6",
+          "comment": ""
+        }
+      ],
+      "createdAt": "2026-06-12T20:18:37.594Z"
+    }
+  ]
+}

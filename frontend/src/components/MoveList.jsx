@@ -11,10 +11,11 @@ const GLYPH = { risky: "?", blunder: "?!" };
  *   history    – [{san, ...}]
  *   cursor     – current ply (0 = start, 1 = after white's 1st, …)
  *   qualities  – per-ply quality markers ("risky" | "blunder" | null)
+ *   mains      – per-ply main-line flags
  *   onGoTo(ply)
  *   onReset()
  */
-export default function MoveList({ history, cursor, qualities = [], onGoTo, onReset }) {
+export default function MoveList({ history, cursor, qualities = [], mains = [], onGoTo, onReset }) {
   const curRef = useRef(null);
   useEffect(() => {
     if (curRef.current) curRef.current.scrollIntoView({ block: "nearest" });
@@ -30,6 +31,7 @@ export default function MoveList({ history, cursor, qualities = [], onGoTo, onRe
     const q = qualities[ply - 1];
     return (
       <button ref={cursor === ply ? curRef : null} className={`ml-move${cursor === ply ? " cur" : ""}`} onClick={() => onGoTo(ply)}>
+        {mains[ply - 1] && <span className="ml-star">★</span>}
         {figurine(entry.san)}
         {q && <span className={`ml-q q-${q}`}>{GLYPH[q]}</span>}
       </button>
@@ -40,7 +42,7 @@ export default function MoveList({ history, cursor, qualities = [], onGoTo, onRe
     <section className="panel movelist-panel">
       <header className="panel-head">
         <h2>Moves</h2>
-        {history.length > 0 && (
+        {onReset && history.length > 0 && (
           <button className="ml-reset" title="Clear the move history" onClick={onReset}>
             ⟲ reset
           </button>

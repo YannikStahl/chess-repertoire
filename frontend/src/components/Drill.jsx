@@ -32,7 +32,7 @@ export default function Drill({ rep, training, categoryMembers, onGrade }) {
       {mode === "positions" ? (
         <PositionDrill key={`p:${category}`} rep={rep} training={training} category={category} categoryMembers={categoryMembers} onGrade={onGrade} />
       ) : (
-        <LineDrill key={`l:${category}`} rep={rep} training={training} category={category} onGrade={onGrade} />
+        <LineDrill key={`l:${category}`} rep={rep} training={training} category={category} categoryMembers={categoryMembers} onGrade={onGrade} />
       )}
     </div>
   );

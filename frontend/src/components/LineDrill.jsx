@@ -1,7 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
 import { Chess } from "chess.js";
 import Board from "./Board.jsx";
-import { categoryRoot, enumerateLines, epdToFen, figurine, gradeSrs, newSrsItem, toEpd } from "../chess-utils.js";
+import { categoryRoot, enumerateLines, epdToFen, figurine, gradeSrs, newSrsItem, setupMoveFor, toEpd } from "../chess-utils.js";
+
+// A line counts as "main" when every stored edge in it is flagged main
+// (setup-derived moves carry no flag and don't disqualify a line).
+function isMainLine(line) {
+  const stored = line.filter((m) => !m.setup);
+  return stored.length > 0 && stored.every((m) => m.main);
+}
 
 const OPP_DELAY = 600; // ms before the opponent auto-plays
 const LINE_DONE_DELAY = 850; // ms to linger on a completed line
@@ -24,20 +31,23 @@ function replay(startFen, line) {
 // Play whole lines from the category's starting position: the opponent's expected
 // replies are auto-played; you must recall your moves. A mistake reveals the
 // correct move, plays it, and you continue from there.
-export default function LineDrill({ rep, training, category, onGrade }) {
+export default function LineDrill({ rep, training, category, categoryMembers, onGrade }) {
   const startEpd = useMemo(() => categoryRoot(rep, category), [rep, category]);
   const startFen = epdToFen(startEpd);
 
   const [round, setRound] = useState(0);
+  const [mainOnly, setMainOnly] = useState(false);
   const lines = useMemo(() => {
-    const ls = enumerateLines(rep, startEpd, rep.color);
+    let ls = enumerateLines(rep, startEpd, rep.color, 1000, (e) => setupMoveFor(rep, e, categoryMembers));
     for (let i = ls.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [ls[i], ls[j]] = [ls[j], ls[i]];
     }
+    if (mainOnly) ls = ls.filter(isMainLine);
+    else ls.sort((a, b) => isMainLine(b) - isMainLine(a)); // main lines first
     return ls;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rep, startEpd, round]);
+  }, [rep, startEpd, round, mainOnly, categoryMembers]);
 
   const [lineIdx, setLineIdx] = useState(0);
   const [step, setStep] = useState(0);
@@ -87,6 +97,21 @@ export default function LineDrill({ rep, training, category, onGrade }) {
     setScore({ right: 0, wrong: 0 });
   }
 
+  function toggleMainOnly() {
+    setMainOnly((v) => !v);
+    setLineIdx(0);
+    setStep(0);
+    setWrong(false);
+    setLineMistakes(0);
+    setScore({ right: 0, wrong: 0 });
+  }
+
+  const mainToggle = (
+    <button className={`tb-btn ml-only${mainOnly ? " on" : ""}`} title="Drill only lines marked as main" onClick={toggleMainOnly}>
+      ★ main only
+    </button>
+  );
+
   function handleMove(from, to) {
     if (!awaitingMe) return;
     const chess = new Chess(cur.fenBefore);
@@ -126,8 +151,15 @@ export default function LineDrill({ rep, training, category, onGrade }) {
       <div className="drill-layout">
         <Board fen={startFen} orientation={rep.color} movableColor={null} lastMove={null} />
         <section className="panel drill-card">
-          <header className="panel-head"><h2>Lines</h2></header>
-          <p className="muted">No lines to play from here{category ? ` in “${category}”` : ""}. Add some moves first.</p>
+          <header className="panel-head">
+            <h2>Lines</h2>
+            {mainToggle}
+          </header>
+          <p className="muted">
+            {mainOnly
+              ? "No main lines here — mark a line as main in the editor, or turn the filter off."
+              : `No lines to play from here${category ? ` in “${category}”` : ""}. Add some moves first.`}
+          </p>
         </section>
       </div>
     );
@@ -141,9 +173,10 @@ export default function LineDrill({ rep, training, category, onGrade }) {
           <h2>Lines</h2>
           {!done && (
             <span className="muted">
-              line {lineIdx + 1} / {lines.length} · ✓ {score.right} ✗ {score.wrong}
+              line {lineIdx + 1} / {lines.length}{isMainLine(lines[lineIdx]) ? " ★" : ""} · ✓ {score.right} ✗ {score.wrong}
             </span>
           )}
+          {mainToggle}
         </header>
 
         {done ? (

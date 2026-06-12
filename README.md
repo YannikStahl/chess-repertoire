@@ -18,6 +18,25 @@ orders is always one node.
   silently overwritten)
 - One-click git commit of the data directory
 
+## Lichess API token (required for the masters explorer)
+
+Since the February 2026 DDoS, Lichess requires being logged in to use the
+opening explorer — anonymous API requests get `401 Authorization Required`.
+Create a free personal access token at
+<https://lichess.org/account/oauth/token> (no scopes needed) and provide it
+to the backend:
+
+```bash
+# docker: put it in .env next to docker-compose.yml
+echo "LICHESS_TOKEN=lip_yourtoken" > .env
+
+# dev: export it before starting the backend
+LICHESS_TOKEN=lip_yourtoken npm start
+```
+
+The eval bar / cloud eval works without a token; the masters database and
+the gap finder need one.
+
 ## Run with Docker
 
 ```bash

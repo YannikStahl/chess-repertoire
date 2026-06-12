@@ -42,6 +42,8 @@ export default function Explorer({ fen, onPlaySan, inRepertoire }) {
         <p className="empty">
           {data && data.status === 0
             ? "Can’t reach Lichess — check your connection."
+            : data && (data.status === 401 || data.status === 403)
+            ? "Lichess now requires a (free) API token for the opening explorer. Create one at lichess.org/account/oauth/token (no scopes needed) and start the backend with LICHESS_TOKEN=<token>."
             : `Masters database is temporarily unavailable${data && data.status ? ` (Lichess returned ${data.status})` : ""}. It will reappear automatically.`}
         </p>
       )}

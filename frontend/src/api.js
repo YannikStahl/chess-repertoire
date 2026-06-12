@@ -18,6 +18,13 @@ export const api = {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(t),
     }).then(json),
+  getGames: () => fetch("/api/games").then(json),
+  saveGames: (g) =>
+    fetch("/api/games", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(g),
+    }).then(json),
   commit: (message) =>
     fetch("/api/git/commit", {
       method: "POST",
@@ -25,6 +32,7 @@ export const api = {
       body: JSON.stringify({ message }),
     }).then(json),
   explorer: (fen) => fetch(`/api/explorer?fen=${encodeURIComponent(fen)}`).then(json),
+  findGaps: (color, moves, minGames) => fetch(`/api/gaps/${color}?moves=${moves}&minGames=${minGames}`).then(json),
   cloudEval: (fen, multiPv = 1) =>
     fetch(`/api/eval?fen=${encodeURIComponent(fen)}&multiPv=${multiPv}`).then(json),
   importPgn: (color, pgn) =>

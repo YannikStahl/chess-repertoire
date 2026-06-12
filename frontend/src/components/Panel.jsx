@@ -8,6 +8,7 @@ import { figurine, sideToMove } from "../chess-utils.js";
  *  epd, node ({annotation, moves} | undefined)
  *  repColor       – which repertoire is open
  *  pendingMove    – last board move not yet in the repertoire, or null
+ *  setupMove      – setup-derived answer for this position ({san, setup}), or null
  *  onAddPending() – add pendingMove (and the line leading to it) to the graph
  *  lastStored     – SAN of the move that led here, if it *is* stored, else null
  *  onRemoveLast() – remove that move from the repertoire
@@ -23,7 +24,7 @@ import { figurine, sideToMove } from "../chess-utils.js";
  *  onAddCategory(name) – tag the current position (descendants inherit it)
  *  onRemoveCategory(name) – remove a tag from the current position
  */
-export default function Panel({ epd, node, repColor, pendingMove, onAddPending, lastStored, onRemoveLast, lastMoveSan, lastQuality, onSetLastQuality, onPlayMove, onDeleteMove, onSetQuality, onAnnotate, allCategories = [], inheritedCategories = [], onAddCategory, onRemoveCategory }) {
+export default function Panel({ epd, node, repColor, pendingMove, setupMove, onAddPending, lastStored, onRemoveLast, lastMoveSan, lastQuality, onSetLastQuality, onPlayMove, onDeleteMove, onSetQuality, onAnnotate, allCategories = [], inheritedCategories = [], onAddCategory, onRemoveCategory }) {
   const [cat, setCat] = useState("");
   const cats = (node && node.categories) || [];
   const tag = () => {
@@ -78,7 +79,12 @@ export default function Panel({ epd, node, repColor, pendingMove, onAddPending, 
       <div className="move-group">
         <span className="group-label">{myTurn ? "Repertoire move" : "Repertoire moves (you)"}</span>
         <div className="chips">
-          {mine.length === 0 && <span className="empty">none yet</span>}
+          {mine.length === 0 && !setupMove && <span className="empty">none yet</span>}
+          {mine.length === 0 && setupMove && (
+            <span className="chip chip-setup" title={`From setup “${setupMove.setup}” — click to play. Store a move here to make an exception.`}>
+              <button className="chip-move" onClick={() => onPlayMove(setupMove)}>⚙ {figurine(setupMove.san)}</button>
+            </span>
+          )}
           {mine.map((m) => (
             <MoveChip key={m.san} move={m} kind={m.conflict ? "conflict" : "mine"} onPlay={onPlayMove} onDelete={onDeleteMove} onSetQuality={onSetQuality} />
           ))}
@@ -152,7 +158,10 @@ function MoveChip({ move, kind, onPlay, onDelete, onSetQuality }) {
   const q = move.quality && QUALITY[move.quality];
   return (
     <span className={`chip chip-${kind}`}>
-      <button className="chip-move" onClick={() => onPlay(move)}>{figurine(move.san)}</button>
+      <button className="chip-move" onClick={() => onPlay(move)}>
+        {move.main && <span className="chip-star">★</span>}
+        {figurine(move.san)}
+      </button>
       <button
         className={`chip-q${move.quality ? " q-" + move.quality : ""}`}
         title={q ? `${q.title} — click to change` : "Mark move quality (risky / blunder)"}

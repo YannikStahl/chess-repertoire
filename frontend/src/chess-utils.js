@@ -1,3 +1,5 @@
+import { Chess } from "chess.js";
+
 export const START_FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 export const START_EPD = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -";
 
@@ -42,6 +44,38 @@ export function categoryMembership(rep) {
   return members;
 }
 
+// --- Setups (system openings) ---
+// rep.setups = { [category]: ["Nf6","g6","Bg7",…] } — an ordered scheme of your
+// moves attached to a category. Wherever it's your turn inside that category and
+// no explicit move is stored, the first *legal* listed move is your repertoire
+// answer. Explicitly stored moves always win, so exceptions are just normal
+// stored lines.
+export function setupMoveFromCats(rep, epd, cats) {
+  if (sideToMove(epd) !== rep.color) return null;
+  const setups = rep.setups || {};
+  for (const cat of cats) {
+    const sans = setups[cat];
+    if (!sans || sans.length === 0) continue;
+    const chess = new Chess(epdToFen(epd));
+    for (const san of sans) {
+      try {
+        const made = chess.move(san);
+        return { san: made.san, uci: made.from + made.to + (made.promotion || ""), target: toEpd(chess.fen()), mine: true, setup: cat };
+      } catch {
+        // not legal here (or already played) — try the next listed move
+      }
+    }
+  }
+  return null;
+}
+
+// Same, but resolving applicable categories via inherited membership.
+export function setupMoveFor(rep, epd, categoryMembers) {
+  const cats = [];
+  for (const c of Object.keys(rep.setups || {})) if (categoryMembers.get(c)?.has(epd)) cats.push(c);
+  return cats.length ? setupMoveFromCats(rep, epd, cats) : null;
+}
+
 // The starting position to drill for a category: the explicitly tagged position
 // nearest the start (or the game start when no category is selected).
 export function categoryRoot(rep, category) {
@@ -66,15 +100,20 @@ export function categoryRoot(rep, category) {
 // moves, at the opponent's turn we follow their expected replies. Each line is an
 // array of move objects. Cycles (transpositions) end a line; `maxLines` caps the
 // combinatorial fan-out on large trees.
-export function enumerateLines(rep, startEpd, color, maxLines = 1000) {
+export function enumerateLines(rep, startEpd, color, maxLines = 1000, fallback = null) {
   const lines = [];
   const path = [];
   const onPath = new Set([startEpd]);
   const childrenOf = (epd) => {
     const node = rep.positions[epd];
-    if (!node) return [];
     const ours = sideToMove(epd) === color;
-    return (node.moves || []).filter((m) => (ours ? m.mine : !m.mine));
+    const stored = ((node && node.moves) || []).filter((m) => (ours ? m.mine : !m.mine));
+    // At our turn with nothing stored, a setup (fallback) move continues the line.
+    if (ours && stored.length === 0 && fallback) {
+      const f = fallback(epd);
+      if (f) return [f];
+    }
+    return stored;
   };
   const dfs = (epd) => {
     if (lines.length >= maxLines) return;

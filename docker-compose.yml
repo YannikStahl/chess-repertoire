@@ -3,6 +3,11 @@ services:
     build: .
     ports:
       - "3001:3001"
+    environment:
+      # Lichess requires login for the opening explorer since Feb 2026.
+      # Create a free token at https://lichess.org/account/oauth/token
+      # (no scopes needed) and put LICHESS_TOKEN=lip_... in a .env file.
+      - LICHESS_TOKEN=${LICHESS_TOKEN:-}
     volumes:
       # Point this at a git repo on the host so your repertoire
       # survives the container and you can push from your terminal.

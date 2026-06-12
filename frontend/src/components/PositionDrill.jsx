@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Chess } from "chess.js";
 import Board from "./Board.jsx";
-import { epdToFen, figurine, gradeSrs, isDue, newSrsItem, sideToMove, START_FEN } from "../chess-utils.js";
+import { epdToFen, figurine, gradeSrs, isDue, newSrsItem, setupMoveFor, sideToMove, START_FEN } from "../chess-utils.js";
 
 // Today's deck: every position where it's our turn and we have a repertoire move,
 // optionally restricted to a category (by inherited membership). Unseen positions
@@ -11,12 +11,17 @@ function buildDeck(rep, training, category, categoryMembers) {
   const deck = [];
   for (const [epd, node] of Object.entries(rep.positions)) {
     if (sideToMove(epd) !== rep.color) continue;
-    const mine = (node.moves || []).filter((m) => m.mine);
-    if (mine.length === 0) continue;
     if (inCategory && !inCategory.has(epd)) continue;
+    let answers = (node.moves || []).filter((m) => m.mine);
+    if (answers.length === 0) {
+      // No explicit move — a category setup may still provide the answer.
+      const f = setupMoveFor(rep, epd, categoryMembers);
+      if (!f) continue;
+      answers = [f];
+    }
     const key = `${rep.color}:${epd}`;
     const item = training.items[key] || newSrsItem();
-    if (isDue(item)) deck.push({ key, epd, answers: mine, item });
+    if (isDue(item)) deck.push({ key, epd, answers, item });
   }
   for (let i = deck.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));

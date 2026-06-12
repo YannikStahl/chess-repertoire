@@ -8,10 +8,12 @@ import EngineSuggestions from "./components/EngineSuggestions.jsx";
 import MoveList from "./components/MoveList.jsx";
 import CategoryList from "./components/CategoryList.jsx";
 import ConflictList from "./components/ConflictList.jsx";
+import GamesView from "./components/GamesView.jsx";
+import GapFinder from "./components/GapFinder.jsx";
 import Drill from "./components/Drill.jsx";
 import { api } from "./api.js";
 import { useEngine } from "./useEngine.js";
-import { START_FEN, START_EPD, toEpd, sideToMove, categoryMembership } from "./chess-utils.js";
+import { START_FEN, START_EPD, toEpd, sideToMove, categoryMembership, setupMoveFromCats } from "./chess-utils.js";
 
 const EMPTY = []; // stable empty-shapes reference, so toggling off doesn't churn the board
 
@@ -56,6 +58,48 @@ export default function App() {
       const m = rep.positions[toEpd(prev)]?.moves.find((x) => x.san === h.san);
       prev = h.fen;
       return (m && m.quality) || null;
+    });
+  }, [rep, history]);
+
+  // Categories accumulated along the played line (tag at START or any ancestor).
+  // Line-based rather than membership-based so setups apply even when the board
+  // has left the stored graph (e.g. an opponent reply you haven't stored yet).
+  const lineCats = useMemo(() => {
+    if (!rep) return EMPTY;
+    const cats = new Set(rep.positions[START_EPD]?.categories || []);
+    for (let i = 0; i < cursor; i++) {
+      for (const c of rep.positions[toEpd(history[i].fen)]?.categories || []) cats.add(c);
+    }
+    return [...cats];
+  }, [rep, history, cursor]);
+
+  // The setup's suggested move here, when nothing explicit is stored.
+  const setupMove = useMemo(() => {
+    if (!rep || lineCats.length === 0) return null;
+    if (node && node.moves.some((m) => m.mine)) return null;
+    return setupMoveFromCats(rep, epd, lineCats);
+  }, [rep, node, epd, lineCats]);
+
+  // Main-line state of the current line's stored edges: none | partial | all.
+  const lineMainState = useMemo(() => {
+    if (!rep || cursor === 0) return "none";
+    let total = 0, main = 0, prev = START_FEN;
+    for (let i = 0; i < cursor; i++) {
+      const m = rep.positions[toEpd(prev)]?.moves.find((x) => x.san === history[i].san);
+      if (m) { total++; if (m.main) main++; }
+      prev = history[i].fen;
+    }
+    return total === 0 ? "none" : main === total ? "all" : main > 0 ? "partial" : "none";
+  }, [rep, history, cursor]);
+
+  // Per-ply main flags for the move list (parallel to history).
+  const moveMains = useMemo(() => {
+    if (!rep) return EMPTY;
+    let prev = START_FEN;
+    return history.map((h) => {
+      const m = rep.positions[toEpd(prev)]?.moves.find((x) => x.san === h.san);
+      prev = h.fen;
+      return !!(m && m.main);
     });
   }, [rep, history]);
 
@@ -272,6 +316,32 @@ export default function App() {
   // Labels the current position belongs to (explicit here + inherited).
   const activeCats = [...explicitCats, ...inheritedCats];
 
+  // Attach / replace / remove a category's setup (ordered list of my-move SANs).
+  function setSetup(category, sans) {
+    mutateRep((r) => {
+      if (!r.setups) r.setups = {};
+      if (sans && sans.length) r.setups[category] = sans;
+      else delete r.setups[category];
+      if (Object.keys(r.setups).length === 0) delete r.setups;
+    });
+  }
+
+  // Mark / unmark every stored edge of the current line as main.
+  function toggleLineMain() {
+    const makeMain = lineMainState !== "all";
+    mutateRep((r) => {
+      let prev = START_FEN;
+      for (let i = 0; i < cursor; i++) {
+        const m = r.positions[toEpd(prev)]?.moves.find((x) => x.san === history[i].san);
+        if (m) {
+          if (makeMain) m.main = true;
+          else delete m.main;
+        }
+        prev = history[i].fen;
+      }
+    });
+  }
+
   // Unresolved conflicts: positions with more than one repertoire move, with the
   // shortest line from the start for display and jumping.
   const conflicts = useMemo(() => {
@@ -313,6 +383,32 @@ export default function App() {
     setCursor(0);
   }
 
+  // Capture the current board line and store it in the games library.
+  async function saveLineAsGame() {
+    if (history.length === 0) return;
+    setToast("saving game…");
+    try {
+      const data = await api.getGames();
+      data.games.unshift({
+        id: `g_${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`,
+        white: "",
+        black: "",
+        year: null,
+        event: "",
+        result: "*",
+        tags: [],
+        note: "",
+        moves: history.map((h) => ({ san: h.san, uci: h.uci, comment: "" })),
+        createdAt: new Date().toISOString(),
+      });
+      await api.saveGames(data);
+      setToast("saved to Games");
+    } catch {
+      setToast("save failed");
+    }
+    setTimeout(() => setToast(""), 2500);
+  }
+
   async function commit() {
     setToast("committing…");
     try {
@@ -346,18 +442,20 @@ export default function App() {
   return (
     <div className="app">
       <header className="topbar">
-        <h1>Repertoire</h1>
+        <h1>Chess Opening Repertoire</h1>
+        {mode !== "games" && (
+          <div className="seg">
+            {["white", "black"].map((c) => (
+              <button key={c} className={color === c ? "on" : ""} onClick={() => setColor(c)}>
+                {c === "white" ? "♙ White" : "♟ Black"}
+              </button>
+            ))}
+          </div>
+        )}
         <div className="seg">
-          {["white", "black"].map((c) => (
-            <button key={c} className={color === c ? "on" : ""} onClick={() => setColor(c)}>
-              {c === "white" ? "♙ White" : "♟ Black"}
-            </button>
-          ))}
-        </div>
-        <div className="seg">
-          {["edit", "drill"].map((m) => (
+          {["edit", "drill", "games"].map((m) => (
             <button key={m} className={mode === m ? "on" : ""} onClick={() => setMode(m)}>
-              {m === "edit" ? "Edit" : "Drill"}
+              {m === "edit" ? "Edit" : m === "drill" ? "Drill" : "Games"}
             </button>
           ))}
         </div>
@@ -382,24 +480,31 @@ export default function App() {
             </button>
           )}
           {toast && <span className="toast">{toast}</span>}
-          <span className={`save save-${saveState}`}>{saveState === "saved" ? "saved" : saveState === "saving" ? "saving…" : "save failed"}</span>
-          <label className="tb-btn">
-            Import PGN
-            <input type="file" accept=".pgn,text/plain" hidden onChange={(e) => e.target.files[0] && importPgnFile(e.target.files[0])} />
-          </label>
-          <a className="tb-btn" href={`/api/export/${color}`}>Export PGN</a>
+          {mode !== "games" && (
+            <>
+              <span className={`save save-${saveState}`}>{saveState === "saved" ? "saved" : saveState === "saving" ? "saving…" : "save failed"}</span>
+              <label className="tb-btn">
+                Import PGN
+                <input type="file" accept=".pgn,text/plain" hidden onChange={(e) => e.target.files[0] && importPgnFile(e.target.files[0])} />
+              </label>
+              <a className="tb-btn" href={`/api/export/${color}`}>Export PGN</a>
+            </>
+          )}
           <button className="tb-btn" onClick={commit}>Commit</button>
         </div>
       </header>
 
-      {mode === "drill" ? (
+      {mode === "games" ? (
+        <GamesView />
+      ) : mode === "drill" ? (
         <main className="main">
           <Drill key={color + (training ? "t" : "")} rep={rep} training={training} categoryMembers={categoryMembers} onGrade={onGrade} />
         </main>
       ) : (
         <main className="main edit-layout">
           <div className="labels-col">
-            <CategoryList categories={allCategories} active={activeCats} onJump={jumpToCategory} />
+            <CategoryList categories={allCategories} active={activeCats} setups={rep.setups || {}} onSetSetup={setSetup} onJump={jumpToCategory} />
+            <GapFinder key={color} color={color} onJump={jumpToEpd} />
           </div>
           <div className="board-col">
             <div className="board-row">
@@ -408,7 +513,17 @@ export default function App() {
             </div>
           </div>
           <div className="moves-col">
-            <MoveList history={history} cursor={cursor} qualities={moveQualities} onGoTo={goToPly} onReset={resetHistory} />
+            <MoveList history={history} cursor={cursor} qualities={moveQualities} mains={moveMains} onGoTo={goToPly} onReset={resetHistory} />
+            {cursor > 0 && (
+              <button className="tb-btn save-line-btn" onClick={toggleLineMain} title="Flag every stored move of this line as a main line">
+                {lineMainState === "all" ? "☆ Unmark main line" : "★ Mark line as main"}
+              </button>
+            )}
+            {history.length > 0 && (
+              <button className="tb-btn save-line-btn" onClick={saveLineAsGame} title="Store this line in the games library">
+                ♟ Save line as game
+              </button>
+            )}
           </div>
           <div className="side-col">
             {conflicts.length > 0 && <ConflictList conflicts={conflicts} currentEpd={epd} onJump={jumpToEpd} />}
@@ -417,6 +532,7 @@ export default function App() {
               node={node}
               repColor={rep.color}
               pendingMove={pending}
+              setupMove={setupMove}
               onAddPending={storeLine}
               lastStored={lastStored}
               onRemoveLast={removeLastMove}
